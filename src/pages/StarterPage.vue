@@ -188,7 +188,7 @@
       <label>Email*</label><br> 
       <input placeholder="Email" type="email" name="name" v-model="email" /><br>  
       <label>Azienda*</label><br> 
-      <input type="text" name="name" v-model="azienda" />
+      <input placeholder="Azienda" type="text" name="name" v-model="azienda" />
       <p class="check-label">A quali tematiche sei interessato?*</p>  
        <section>
       <input class="checkbox" type="checkbox" name="sport1" value="e-Learning" v-model="interessi">e-Learning
@@ -954,6 +954,7 @@ body {
   font-family: Raleway;
   width: 50%;
   border: 1px solid black;
+  padding: 10px 5px 10px 5px
 }
 
 .form-partecipa > form > label{
