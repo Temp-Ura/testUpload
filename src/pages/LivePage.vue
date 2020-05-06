@@ -75,7 +75,8 @@
   <section class="tab_prog" v-for="item in prog" v-bind:key="item.length">
             
             <div class="pro-img">
-              <img class="profile_img" :src="'/img-rel/' + item.image" />
+              <a v-on:click="viewYT(item.link)" v-scroll-to="{el:'#manifesto',  offset: -50}">
+              <img class="profile_img" :src="'/img-rel/' + item.image"> </a>
             </div>
             <div class="text_prog">
               <div class="ambito" :class="{ 'el1': item.sezione == 1, 'el2': item.sezione == 2 ,'el3': item.sezione == 3}"></div>
@@ -391,6 +392,8 @@ export default {
 
       success:false,
       checka:false,
+
+      hover:false,
 
 
       newPcf: true,
@@ -1358,5 +1361,12 @@ body {
   margin-bottom: 10px;
   font-size: 14px;
   font-weight: normal;
+}
+
+.pro-img:hover{
+
+ filter: drop-shadow(0px 10px 5px);
+ transform: translateY(-
+ 10px);
 }
 </style>
