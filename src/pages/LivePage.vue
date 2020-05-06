@@ -458,7 +458,8 @@ export default {
   methods: {
 
       viewYT(k) {
-      this.$refs.youtube.player.seekTo(k)
+      this.$refs.youtube.player.seekTo(k, true)
+      //this.$refs.youtube.player.playVideo()
       },
       playVideo() {
       this.$refs.youtube.player.seekTo(79)
