@@ -67,7 +67,8 @@
       </div>
 
 <div class="programma" id="palinsesto"> 
-  <h2  id="tito" class="progra" >PROGRAMMA</h2>  <section class=legenda> 
+  <h2  id="tito" class="progra" >PROGRAMMA</h2>
+  <h3 class="chsy">Clicca sull'intervento che ti interessa</h3>  <section class=legenda> 
     <div class="elblock"><div class="el el1"></div>Visioni /Scenari </div><div class="elblock"><div class="el el2"></div>Strategie Ecosistemiche</div><div class="elblock"> <div class="el el3"></div>Progetto Phoenix</div>
   </section>
   </div>
@@ -1367,5 +1368,12 @@ body {
 
  
  transform: scale(1.2);
+}
+
+.chsy{
+  text-align: center;
+  font-family:raleway ;
+  font-size: 20px;
+  
 }
 </style>
