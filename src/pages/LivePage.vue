@@ -1365,8 +1365,7 @@ body {
 
 .pro-img:hover{
 
- filter: drop-shadow(0px 10px 5px);
- transform: translateY(-
- 10px);
+ 
+ transform: scale(1.2);
 }
 </style>
