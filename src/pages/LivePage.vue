@@ -465,7 +465,7 @@ export default {
     
     },
     playing() {
-      console.log('\o/ we are watching!!!')
+      // console.log('\o/ we are watching!!!')
     },
 
     async updateFirebase() {
