@@ -2,7 +2,7 @@
   <footer
     class="footer"
     :class="{ [`footer-${type}`]: type }"
-    :data-background-color="backgroundColor"
+    
   >
     <div class="container">
       
@@ -25,5 +25,6 @@ export default {
 <style>
 .footer{
   min-height: 20vh;
+  background: rgb(235, 234, 234);
 }
 </style>

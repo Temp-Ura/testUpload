@@ -6,7 +6,7 @@
 
       <anchor-router-link
         class="navbar-brand"
-        :to="{name: 'starter', hash: ''}"
+        :to="{name: 'starter', hash: '#header'}"
         :scrollOptions="scrollOptions"
       ><img class="logo-men" src="/img2/logo-vt-s.png"></anchor-router-link>
  
@@ -14,14 +14,15 @@
     <template slot="navbar-menu">
       <li class="nav-item hover">
         <anchor-router-link
+        style="text-decoration:underline"
           v-if="!liv"
           class="navbar-brand nav-link"
-          :to="{name: 'starter', hash: '#partecipa'}"
+          :to="{name: 'starter', hash: '#manifesto'}"
           :scrollOptions="scrollOptions"
-        >Partecipa</anchor-router-link>
+        >DIRETTA</anchor-router-link>
 
       </li>
-      <!-- <li class="nav-item hover">
+      <li class="nav-item hover">
         <anchor-router-link
           class="navbar-brand nav-link"
           :to="{name: 'starter', hash: '#palinsesto'}"
@@ -34,23 +35,23 @@
           :to="{name: 'starter', hash: '#partner'}"
           :scrollOptions="scrollOptions"
         >Partner</anchor-router-link>
-      </li> -->
-      <li class="nav-item hover"></li>
+      </li>
+     <li class="nav-item hover"></li>
       <li class="nav-item hover">
-        <a class="nav-link" href="https://www.instagram.com/tlon.it/">
-          <i class="fab fa-instagram"></i>
+        <a class="nav-link" href="https://www.linkedin.com/company/venturethinking/">
+          <i class="fab fa-linkedin"></i>
         </a>
       </li>
       <li class="nav-item hover">
-        <a class="nav-link" href="https://www.facebook.com/associazionetlon/">
+        <a class="nav-link" href="https://www.facebook.com/venturethinkingitalia">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
-      <li class="nav-item hover">
+      <!--<li class="nav-item hover">
         <a class="nav-link" href="https://www.youtube.com/channel/UCP8R6WbHCErZhvlEC-hmT_w">
           <i class="fab fa-youtube"></i>
         </a>
-      </li>
+      </li> -->
     </template>
   </navbar>
 </template>
@@ -59,6 +60,7 @@
 import { DropDown, NavbarToggleButton, Navbar, NavLink } from "@/components";
 import { Popover } from "element-ui";
 import AnchorRouterLink from "vue-anchor-router-link";
+var VueScrollTo = require('vue-scrollto');
 
 export default {
   name: "main-navbar",
@@ -213,7 +215,7 @@ export default {
 
 <style scoped>
 .logo-men{
-  width:200px;
+  width:130px;
 }
 
 @media screen and (max-width: 1025px) {

@@ -2,14 +2,14 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyBVOYEbn5tGFqEWJQuNN1QDvoV8rnPgPrs",
-    authDomain: "venture-thinking.firebaseapp.com",
-    databaseURL: "https://venture-thinking.firebaseio.com",
-    projectId: "venture-thinking",
-    storageBucket: "venture-thinking.appspot.com",
-    messagingSenderId: "937783086999",
-    appId: "1:937783086999:web:0759c8d5d6e82c8af93ed2",
-    measurementId: "G-LTC7HSREJS"
+    apiKey: "AIzaSyBOE6sF12PVLVz5r7EoG-FjRe9diNHiGwc",
+    authDomain: "venture-thinkink-forn.firebaseapp.com",
+    databaseURL: "https://venture-thinkink-forn.firebaseio.com",
+    projectId: "venture-thinkink-forn",
+    storageBucket: "venture-thinkink-forn.appspot.com",
+    messagingSenderId: "1094545959832",
+    appId: "1:1094545959832:web:c587ae251bc352419359ed",
+    measurementId: "G-RDDWGT80MF"
 });
 
 const db = firebaseApp.firestore();

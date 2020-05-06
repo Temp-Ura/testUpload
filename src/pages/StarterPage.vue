@@ -1,13 +1,21 @@
 <template>
-  <div class="starter-page">
+  <div class="starter-page" >
     <div class="section text-center">
       
 
       <img
         
         id="header"
-        class="header-new"
-        src="/img2/header-vt.png"
+        class="header-new h-desk"
+        src="/img2/header_sito.jpg"
+        alt
+      />
+
+      <img
+        
+        id="header"
+        class="header-new h-mob"
+        src="/img2/header-mob.jpg"
         alt
       />
       
@@ -22,13 +30,8 @@
           28 Marzo
       </h2>-->
       <div id="manifesto" style="background:#ec008c">
-         <!-- <iframe
-          v-if="newPc"
-          class="video"
-          src="https://www.youtube.com/embed/ka632DNfmtU?autoplay=1&modestbranding=1&showinfo=0&fs=0&controls=0"
-          frameborder="0"
-        ></iframe>
-        <iframe
+         <iframe class="video" src="https://www.youtube.com/embed/TRV6pkDkPS4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- <iframe
           v-else
           class="video-old"
           src="https://www.youtube.com/embed/ZohnJGCtJ-A?autoplay=1&modestbranding=1&showinfo=0&fs=0&controls=0"
@@ -46,9 +49,54 @@
           src="https://www.youtube.com/embed/JsQ2HB7ABoA?autoplay=1"
           frameborder="0"
         ></iframe> -->
-      <div class="partecipa"> <router-link class="link-part" :to="{name: 'starter', hash: '#partecipa'}"
+      <!-- <div class="partecipa"> <router-link class="link-part" to="#partecipa"
           :scrollOptions="scrollOptions"> PARTECIPA </router-link></div>
+      </div> -->
+
+      <div class="parte"> <a class="link-part" href="#" v-scroll-to="{el:'#partecipa',  offset: -200,}"
+         :scrollOptions="scrollOptions" > PARTECIPA </a></div>
+         <!-- <iframe
+          
+          class="video"
+          src="https://www.youtube.com/embed/2tbiFL2IQGQ?autoplay=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&fs=0&color=white&controls=0"
+          frameborder="0"
+        ></iframe> -->
       </div>
+
+<div class="programma" id="palinsesto"> 
+  <h2 id="tito" class="progra" >PROGRAMMA</h2>
+  <section class=legenda> 
+    <div class="elblock"><div class="el el1"></div>Visioni /Scenari </div><div class="elblock"><div class="el el2"></div>Strategie Ecosistemiche</div><div class="elblock"> <div class="el el3"></div>Progetto Phoenix</div>
+  </section>
+  </div>
+<div class="back-texture">
+  <section class="tab_prog" v-for="item in prog" v-bind:key="item.length">
+            
+            <div class="pro-img">
+              <img class="profile_img" :src="'/img-rel/' + item.image" />
+            </div>
+            <div class="text_prog">
+              <div class="ambito" :class="{ 'el1': item.sezione == 1, 'el2': item.sezione == 2 ,'el3': item.sezione == 3}"></div>
+              <h3 class="orario">{{item.dalla}} - {{item.alle}}</h3>
+
+             <h5 class="amb" >{{item.ambito}} </h5> 
+              <h4  class="titolo" style="color:black !important">{{item.titolo}}</h4>
+              <div class="inter" v-for="ite in item.interviene" v-bind:key="ite.length">{{ite.nome}} <span v-if="ite.ruolo" class="ruolo">({{ite.ruolo}})</span>
+              <div class="biot" v-if="ite.bio">{{ite.bio}}</div>
+              </div>
+              <div v-if="item.modera">
+               <h5 class="mod" v-if="item.modera.length == 1 ">Modera</h5>
+              <h5 class="mod" v-else >Moderano </h5> 
+              <h5 class="mod-nomi" v-if="item.modera.length == 1 ">{{item.modera[0]}}</h5>
+              <h5 class="mod-nomi" v-else v-for="mod in item.modera"  v-bind:key="mod.length">{{mod}}</h5>
+              
+              </div>
+              <!-- <h5 class="mod" v-if="item.intro != '' ">{{item.intro}}</h5> -->
+            </div>
+          </section>
+          </div>
+        
+
 
 
       <!-- <div class="programma" id="palinsesto">
@@ -177,9 +225,64 @@
         </a>
       </section>
     </div> -->
-  
+    
+     <h2 id="partner" class="regards">Main Partner</h2>
+      
+      <section class="loghi-2">
+        <a href="http://www.efmnet.com/#1" target="_blank">
+          <img class="logo-2" src="/img2/efm.png" />
+        </a>
+        <a href="https://www.iese.edu/" target="_blank">
+          <img class="logo-2" src="/img2/iese.png" />
+        </a>
+        <a href="https://www.unicampus.it/" target="_blank">
+          <img class="logo-2" src="/img2/bio-medico.png" />
+        </a>
+        <a href="https://www.myspothub.com/" target="_blank">
+          <img class="logo-2" src="/img2/myspot.png" />
+        </a>
+      </section>
 
-<div class="form-partecipa" id="partecipa">
+    <h2 id="tito" class="regards">Media Partner</h2>
+      
+      <section class="loghi-2">
+        <a href="https://www.cnbc.com/world/?region=world" target="_blank">
+          <img class="logo-2" src="/img2/cnbc.png" />
+        </a>
+         </section>
+
+             <h2 id="tito" class="regards">Sponsor</h2>
+      
+      <section class="loghi-2">
+        <a href="https://bnl.it/it/Individui-e-Famiglie" target="_blank">
+          <img class="logo-2" src="/img2/bnl.png" />
+        </a>
+        <a href="http://www.sogei.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/116" target="_blank">
+          <img class="logo-2" src="/img2/sogei.png" />
+        </a>
+        <a href="https://www.toyota.it/" target="_blank">
+          <img class="logo-2" src="/img2/toyota.png" />
+        </a>
+
+      </section>
+
+          <h2 id="tito" class="regards">Partner Tecnici</h2>
+      
+      <section class="loghi-2">
+        <a href="http://aiic-italia.it/" target="_blank">
+          <img class="logo-2" src="/img2/aiic-logo.png" />
+        </a>
+        <a href="http://converso.cloud/" target="_blank">
+          <img class="logo-2" src="/img2/converso-logo.png" />
+        </a>
+         </section>
+    
+     
+      
+  
+<div class="block"></div>
+<div class="f-block" id="partecipa" style="background:#ec008c"><div class="f-intro">Registrati ed entra nell'ecosistema Venture Thinking - l'acceleratore per reinventare il tuo business insieme ai CEO di grandi aziende, intellettuali, i maggiori esperti di innovazione.</div></div>
+<div class="form-partecipa" >
     <form @submit.prevent="updateFirebase" >
       <label>Nome*</label><br> 
       <input placeholder="Nome" type="text" name="name" v-model="nome" /><br>  
@@ -187,17 +290,37 @@
       <input placeholder="Cognome" type="text" name="name" v-model="cognome" /><br>  
       <label>Email*</label><br> 
       <input placeholder="Email" type="email" name="name" v-model="email" /><br>  
-      <label>Azienda*</label><br> 
-      <input placeholder="Azienda" type="text" name="name" v-model="azienda" />
-      <p class="check-label">A quali tematiche sei interessato?*</p>  
-       <section>
-      <input class="checkbox" type="checkbox" name="sport1" value="e-Learning" v-model="interessi">e-Learning
-      <input class="checkbox" type="checkbox" name="sport2" value="Digital Collaboration" v-model="interessi">Digital Collaboration  
-      <input class="checkbox" type="checkbox" name="sport3" value="Rethinking Strategy" v-model="interessi">Rethinking Strategy
-      <input class="checkbox" type="checkbox" name="sport4" value="Solidarity Ecosystems" v-model="interessi">Solidarity Ecosystems 
-      <input class="checkbox" type="checkbox" name="sport5" value="Social Distancing" v-model="interessi">Social Distancing
-     </section> 
-      <label>Come vuoi partecipare all'ecosistema?*</label> <br> 
+      <label>Azienda</label><br> 
+      <input placeholder="Azienda" type="text" name="name" v-model="azienda" /><br> 
+      <label>Categoria</label> <br> 
+    <select v-model="categoria"> 
+      <option disabled value="">Please select one</option> 
+        <option>Architettura & Design</option>  
+        <option>Automotive & Transportation</option>  
+        <option>Banking & Insurance</option>  
+        <option>Commercio & fashion</option>  
+        <option>Consulenza</option>  
+        <option>Cultura & Formazione</option>  
+
+        <option>Farmaceutica</option>  
+        <option>Fondi – SGR</option>  
+        <option>Food and Beverage</option>  
+        <option>ICT – TLC</option>  
+        <option>Industria</option>  
+        <option>Ingegneria</option>  
+        <option>Media e Comunicazione</option>        
+      <option>PA</option>  
+        <option>Real Estate & Construction</option>  
+        <option>Energy & Utilities</option>  
+        <option>Sanità</option>  
+        <option>Service Provider</option>  
+        <option>Università</option>  
+        <option>Energy & Utilities</option>  
+        <option>Altro</option>  
+  
+  </select> <br> 
+
+      <label>Come vuoi partecipare all'ecosistema?</label> <br> 
     <select v-model="partecipazione"> 
       <option disabled value="">Please select one</option> 
         <option>Donor/Partner</option>  
@@ -207,13 +330,17 @@
   
   </select> <br> 
       <label>Note</label><br> 
-      <textarea class="texta" id="Field4" name="Field4" spellcheck="true" rows="10" cols="50" tabindex="4" v-model="note"></textarea><br>
-      <div><input class="checkbox" type="checkbox" name="privacy" value="true" v-model="privacy">Accetto i Termini e Condizioni del Servizio e <a href="https://venturethinking.it/privacy-policy/">Privacy Policy</a></div><br>
+      <textarea class="texta" id="Field4" name="Field4" spellcheck="true" rows="3" cols="70" tabindex="4" v-model="note"></textarea><br>
+      
+      
+      <div><input class="checkbox" type="checkbox" name="privacy" value="true" v-model="privacy">Accetto i Termini e Condizioni del Servizio e <a href="http://www.efmnet.com/node/354">Privacy Policy</a></div><br>
+      
+      <div class="alert nope" v-if="checka"> <h3 class="avviso">Compila tutti i campi obbligatori</h3></div>
+    <div class="alert success" v-if="success">  <h3 class="avviso">Grazie per esserti iscritto all'ecosistema Venture Thinking <br> Ti aspettiamo qui, sabato 2 maggio dalle 15:00 alle 21:00 alla diretta streaming</h3></div>
       <button class="bott" type="submit" >Partecipa</button>
 
     </form> 
-    <div class="alert nope" v-if="checka"> <h3 class="avviso">Compila tutti i campi obbligatori</h3></div>
-    <div class="alert success" v-if="success"> > <h3 class="avviso">Grazie della partecipazione</h3></div>
+   
 </div> 
     </div>
   </div>
@@ -250,6 +377,7 @@ export default {
       azienda:"",
       partecipazione:"",
       note:"",
+      categoria:"",
       privacy:false,
 
       success:false,
@@ -264,6 +392,19 @@ export default {
       prog: [],
       prognew: [],
       date: "",
+
+      scrollOptions: {
+        container: "body",
+        duration: 700,
+        easing: "ease",
+        offset: -110,
+        cancelable: true,
+        onStart: false,
+        onDone: false,
+        onCancel: false,
+        x: false,
+        y: true
+      }
 
     };
   },
@@ -300,12 +441,12 @@ export default {
 
 
     async updateFirebase() {
-      if(this.nome!= "" && this.cognome!= "" && this.azienda!= "" && this.partecipazione!= "" && this.interessi!= "" && this.privacy== true ){
+      if(this.nome!= "" && this.cognome!= "" && this.email!= "" && this.privacy== true ){
         
       try {
         var date = new Date();
-        await db.doc("contacts/"+date).set({interessi:this.interessi, nome: this.nome, cognome: this.cognome,
-        azienda: this.azienda, partecipazione:this.partecipazione, email:this.email, note:this.note
+        await db.doc("contacts/"+date).set({nome: this.nome, cognome: this.cognome,
+        azienda: this.azienda, partecipazione:this.partecipazione, email:this.email, note:this.note, categoria:this.categoria
         });
         this.state = 'synced';
         this.checka = false;
@@ -325,12 +466,12 @@ export default {
     },
 
     fetchData() {
-      axios.get("./21marzo.json").then(response => {
+      axios.get("./vt-prog.json").then(response => {
         this.prog = response.data;
       });
-      axios.get("./aprile.json").then(response => {
-        this.prognew = response.data;
-      });
+      // axios.get("./aprile.json").then(response => {
+      //   this.prognew = response.data;
+      // });
     },
 
     toggleDate: function() {
@@ -406,7 +547,10 @@ export default {
 }
 
 .progra {
-  padding-bottom: 30px;
+  
+  text-align: center;
+  font-family: Arvo;
+  font-weight: normal !important;
 }
 
 .progra-new {
@@ -545,7 +689,7 @@ export default {
   left: 0;
   width: 100%;
   height: 57vw;
-  border: 20px solid rgba(36, 188, 220, 1);
+  border: 20px solid #ec008c;
 }
 
 .video-old {
@@ -565,8 +709,9 @@ body {
   //color:  #259B92;
   margin-top: 0px;
   margin-bottom: 0px;
-  font-weight: 900;
+
   font-size: 40px;
+  
 }
 
 #data {
@@ -600,11 +745,17 @@ body {
   direction: row;
 }
 
+
+
 @media screen and (min-width: 1025px) {
   .profile_img {
     /* width: 200px;
       height: 200px; */
     margin: 0 auto;
+  }
+
+  .biot{
+    font-size: 12px;
   }
 
   .lin-live {
@@ -624,12 +775,20 @@ body {
   }
 }
 
+
+.text_prog{
+  padding: 2vw;
+  font-family: Raleway !important;
+  background: white;
+  width: 40vw;
+}
+
 .pro-img {
-  float: left;
-  width: 150px;
-  height: 150px;
+  float: right;
+  width: 20vw;
+  height: 20vw;
   margin-right: 20px;
-  border: 5px solid #259b92;
+  
   overflow: hidden;
 }
 
@@ -638,10 +797,11 @@ body {
 }
 
 .tab_prog {
+  margin-top: 50px;
   display: flex;
   /* border: 5px solid #259B92; */
   direction: row;
-  justify-content: start;
+  justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
@@ -653,13 +813,13 @@ body {
 
 .programma {
   padding-top: 5vw;
-  margin: 0 20vw 0 20vw;
+  margin: 0 10vw 0 10vw;
   text-align: left;
 }
 
 .orario {
-  color: #259b92;
-  margin-bottom: 0px;
+  font-size: 20px;
+  margin-bottom: 0.5vw;
 }
 
 .ora-new {
@@ -671,22 +831,45 @@ body {
   max-width: 450px;
   font-size: 20px;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .inter {
   max-width: 450px;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 18px;
+  font-weight: bold;
   color: black;
 }
 
+.ruolo{
+  font-size: 15px;
+  font-weight: normal;
+}
+
 .mod {
-  margin-top: 0;
-  font-size: 20px;
-  font-weight: 300;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: normal;
+  max-width: 450px;
+}
+
+.amb {
+  margin-bottom: 0px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: normal;
+  max-width: 450px;
+}
+
+.mod-nomi {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-weight: bold;
   max-width: 450px;
 }
 
@@ -739,8 +922,11 @@ body {
 }
 
 .regards {
+  font-family: Arvo;
+  font-weight: normal;
   padding-top: 50px;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
+  font-size: 3vw;
 }
 
 .media {
@@ -770,14 +956,46 @@ body {
 }
 
 .header-new {
-  margin-top: 7vw;
-  width: 70vw;
-  max-width: 1080px;
-  margin-bottom: 7vw;
+  margin-top: 2vw;
+  width: 100vw;
+  //max-width: 1080px;
+  margin-bottom: 0vw;
   //padding:0 3vw 3vw;
+  
+}
+
+.h-mob{
+ display: none ;
 }
 
 @media screen and (max-width: 1025px) {
+
+
+.h-mob{
+ display: block;
+}
+.h-desk{
+ display: none;
+}
+  .regards {
+
+    font-size: 28px;
+  }
+  .tab_prog {
+    //justify-content: start;
+  }
+
+  .text_prog{
+    width:80vw;
+  }
+
+  .pro-img{
+    height: 30vh;
+    width: 30vh;
+  margin-bottom: 20px;
+  }
+
+
   .lin-live {
     width: 150px;
     height: auto;
@@ -834,7 +1052,7 @@ body {
     margin-bottom: 3vw;
   }
   .video {
-    border: 5px solid rgba(36, 188, 220, 1);
+    border: 5px solid  #ec008c;
   }
   .video-old {
     border: 5px solid #259b92;
@@ -854,7 +1072,7 @@ body {
   }
 
   .programma {
-    margin: 0 15vw 0 15vw;
+    margin: 0 10vw 0 10vw;
   }
   .inter {
     font-size: 18px;
@@ -930,7 +1148,7 @@ body {
 }
 
 
-.partecipa{
+.parte{
  // height: 20vw;
   padding-top: 4vw;
   padding-bottom: 4vw;
@@ -983,12 +1201,15 @@ body {
 
 .success{
   background: rgb(28, 214, 74);
+  
 }
 
 .avviso{
   font-family: Raleway;
   font-weight: bold;
   color: white;
+  margin-bottom: 10px;
+  padding: 0 20vh;
 }
 
 .texta{
@@ -1006,5 +1227,78 @@ body {
   font-size: 2vw;
   margin-bottom: 3vw;
   border-radius: 3vw;
+}
+
+.block{
+  height: 2px;
+  width: 100%;
+  background: black;
+}
+.el1{
+  background: #ec008c;
+}
+
+.el2{
+  background: #00aeee
+}
+.el3{
+  background: #ffc202
+}
+.el{
+  width: 2vw;
+  height: 2vw;
+  
+  border-radius: 100%;
+  display: inline-block;
+  margin-right: 2vw;
+}
+.elblock{
+ display: block;
+ font-family: raleway;
+ font-size: 20px;
+}
+
+.legenda{
+  margin-top: 2vw;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom:20px;
+
+}
+
+.ambito{
+  
+  width: 20px;
+  height:20px;
+  
+  border-radius: 100%;
+  float: right;
+}
+
+.back-texture{
+  background-image: url("/img2/texture.png");
+  padding: 5vw 0;
+}
+
+.f-block{
+  margin-top: 30px;
+  padding: 2vw 0;
+}
+
+.f-intro{
+  padding: 2vW 15vw;
+  color: white;
+  font-family: raleway;
+  font-weight: bold;
+  font-size: 3vw;
+}
+
+.biot{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: normal;
 }
 </style>

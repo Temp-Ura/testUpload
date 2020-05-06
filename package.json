@@ -21,6 +21,7 @@
     "vue-lazyload": "^1.2.6",
     "vue-router": "^3.0.2",
     "vue-scrollto": "^2.17.1",
+    "vue-youtube": "^1.4.0",
     "vue2-transitions": "^0.2.3",
     "vuefire": "^2.2.2",
     "vuex": "^3.1.3"

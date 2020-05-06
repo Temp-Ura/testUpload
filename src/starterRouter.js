@@ -5,18 +5,19 @@ import StarterNavbar from './layout/StarterNavbar.vue';
 import StarterFooter from './layout/StarterFooter.vue';
 import Live from './pages/LivePage.vue';
 import LiveNavbar from './layout/LiveNavbar.vue';
+import VueYoutube from 'vue-youtube'
 
-Vue.use(Router);
+Vue.use(Router, VueYoutube);
 
 export default new Router({
-  // mode: "history",
+  mode: "history",
   // base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
       name: 'starter',
       components: {
-        default: Starter,
+        default: Live,
         header: LiveNavbar,
         // header: StarterNavbar,
         footer: StarterFooter,
@@ -31,7 +32,7 @@ export default new Router({
       path: '/live',
       name: 'live',
       components: {
-        default: Live,
+        default: Starter,
         header: LiveNavbar,
         footer: StarterFooter,
       },
@@ -41,17 +42,17 @@ export default new Router({
       }
     }
   ],
-  scrollBehavior(to, from, savedPosition) {
-    if (to.hash) {
-        // Use for direct jump.
-        //window.location.href = to.hash;
-        // Use VueScrollTo for animation.
-        VueScrollTo.scrollTo(to.hash, 700);
-        return { selector: to.hash }
-    } else if (savedPosition) {
-        return savedPosition;
-    } else {
-        return { x: 0, y: 0 }
-    }
-}
+//   scrollBehavior(to, from, savedPosition) {
+//     if (to.hash) {
+//         // Use for direct jump.
+//         //window.location.href = to.hash;
+//         // Use VueScrollTo for animation.
+//         VueScrollTo.scrollTo(to.hash, 700);
+//         return { selector: to.hash }
+//     } else if (savedPosition) {
+//         return savedPosition;
+//     } else {
+//         return { x: 0, y: 0 }
+//     }
+// }
 });
