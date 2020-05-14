@@ -23,9 +23,9 @@
         style="text-decoration:underline"
           v-if="!liv"
           class="navbar-brand nav-link"
-          :to="{name: 'starter', hash: '#manifesto'}"
+          :to="{name: 'starter', hash: '#partecipa'}"
           :scrollOptions="scrollOptions"
-        >DIRETTA</anchor-router-link>
+        >Partecipa</anchor-router-link>
 
       </li>
       <li class="nav-item hover">
@@ -44,17 +44,17 @@
       </li>
      <li class="nav-item hover"></li>
       <li class="nav-item hover">
-        <a class="nav-link" href="https://www.linkedin.com/company/venturethinking/">
+        <a class="nav-link" href="https://www.instagram.com/ilfestivaldellamore/">
           <i class="fab fa-instagram"></i>
         </a>
       </li>
       <li class="nav-item hover">
-        <a class="nav-link" href="https://www.facebook.com/venturethinkingitalia">
+        <a class="nav-link" href="https://www.facebook.com/ilfestivaldellamore/">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
       <li class="nav-item hover">
-        <a class="nav-link" href="https://www.youtube.com/channel/UCP8R6WbHCErZhvlEC-hmT_w">
+        <a class="nav-link" href="https://www.youtube.com/channel/UCYk5X0YebPDZSHMI4dV2L7A">
           <i class="fab fa-youtube"></i>
         </a>
       </li>

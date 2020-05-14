@@ -6,6 +6,16 @@
       <img id="header" class="header-new h-mob" src="/img2/header-mobile.jpg" alt />
 
       <div id="manifesto">
+
+        <div class="parte">
+          <a
+            class="link-part"
+            href="#"
+            v-scroll-to="{el:'#partecipa',  offset: -200,}"
+            :scrollOptions="scrollOptions"
+          >PARTECIPA COME PUBBLICO</a>
+        </div>
+
         <div class="video">
           <youtube
             :video-id="videoId"
@@ -17,19 +27,12 @@
           ></youtube>
         </div>
 
-        <div class="parte">
-          <a
-            class="link-part"
-            href="#"
-            v-scroll-to="{el:'#partecipa',  offset: -200,}"
-            :scrollOptions="scrollOptions"
-          >PARTECIPA</a>
-        </div>
+
       </div>
-      <div class="rot" id="rota">
-       <img  src="img2/rot.svg" alt="" uk-svg>
+      <div class="rot" >
+       <img id="rota" src="img2/rot.svg" alt="" uk-svg>
        </div>
-        <div class="uk-text-center cuore" uk-parallax="stroke: 100%; viewport: 0.7" uk-scrollspy="cls: uk-animation-fade; delay: 500">
+        <div class="uk-text-center cuore" uk-parallax="stroke: 100%; viewport: 0.5" uk-scrollspy="cls: uk-animation-fade; delay: 500">
             <img  id="cor" src="img2/cuore.svg" alt="" uk-svg>
         </div>
       <div class="programma" id="palinsesto">
@@ -109,58 +112,45 @@
       <h2 id="partner" class="regards">Main Partner</h2>
 
       <section class="loghi-2">
-        <a href="http://www.efmnet.com/#1" target="_blank">
-          <img class="logo-2" src="/img2/efm.png" />
+
+         <a href="https://www.pianob.it/" target="_blank">
+            <img class="logo-1" src="/img2/logo-pianob.png" />
+          </a>
+
+           <a href="https://www.audible.it/" target="_blank">
+          <img class="logo-2" src="/img2/audible_IT.png" />
         </a>
-        <a href="https://www.iese.edu/" target="_blank">
-          <img class="logo-2" src="/img2/iese.png" />
+        <a href="https://www.triennale.org/" target="_blank">
+          <img class="logo-2" src="/img2/triennale.png" />
         </a>
-        <a href="https://www.unicampus.it/" target="_blank">
-          <img class="logo-2" src="/img2/bio-medico.png" />
-        </a>
-        <a href="https://www.myspothub.com/" target="_blank">
-          <img class="logo-2" src="/img2/myspot.png" />
-        </a>
+       
       </section>
 
-      <h2 id="tito" class="regards">Media Partner</h2>
+      <h2 id="tito" class="regards">Radio Media Partner</h2>
 
       <section class="loghi-2">
-        <a href="https://www.cnbc.com/world/?region=world" target="_blank">
-          <img class="logo-2" src="/img2/cnbc.png" />
+        <a href="https://www.deejay.it/" target="_blank">
+          <img class="logo-2" src="/img2/deejay.png" />
         </a>
       </section>
 
-      <h2 id="tito" class="regards">Sponsor</h2>
+      <h2 id="tito" class="regards">Social Media Partner</h2>
 
       <section class="loghi-2">
-        <a href="https://bnl.it/it/Individui-e-Famiglie" target="_blank">
-          <img class="logo-2" src="/img2/bnl.png" />
+        <a href="https://www.youtube.com/channel/UCkkcN04NIC0wwqNbcWlXNWQ" target="_blank">
+          <img class="logo-2" src="/img2/venti.png" />
         </a>
-        <a href="http://www.sogei.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/116" target="_blank">
-          <img class="logo-2" src="/img2/sogei.png" />
-        </a>
-        <a href="https://www.toyota.it/" target="_blank">
-          <img class="logo-2" src="/img2/toyota.png" />
-        </a>
+        
       </section>
 
-      <h2 id="tito" class="regards">Partner Tecnici</h2>
-
-      <section class="loghi-2">
-        <a href="http://aiic-italia.it/" target="_blank">
-          <img class="logo-2" src="/img2/aiic-logo.png" />
-        </a>
-        <a href="http://converso.cloud/" target="_blank">
-          <img class="logo-2" src="/img2/converso-logo.png" />
-        </a>
-      </section>
+     
 
       <div class="block"></div>
       <div class="f-block" id="partecipa" >
         <div
           class="f-intro"
-        >Registrati e partecipa</div>
+        >Partecipa come pubblico</div>
+         <div class="sub-intro">e solo se lo chiederai potrai intervenire in diretta e chiacchierare con Sofia Viscardi e Lorenzo Luporini, La Pina ed Emiliano Pepe, Franco Bolelli e Manuela Mantegazza, Paola Maugeri, Mapi Danna, Andrea Colamedici e Maura Gancitano</div>
       </div>
       <div class="form-partecipa">
         <form @submit.prevent="updateFirebase">
@@ -176,6 +166,7 @@
           <br />
           <input placeholder="Email" type="email" name="name" v-model="email" />
           <br />
+          
           <!-- <label>Azienda</label>
           <br />
           <input placeholder="Azienda" type="text" name="name" v-model="azienda" />
@@ -233,9 +224,13 @@
           ></textarea>
           <br /> -->
 
-          <div>
+          <div class="checkdiv">
             <input class="checkbox" type="checkbox" name="privacy" value="true" v-model="privacy" />Accetto i Termini e Condizioni del Servizio e
-            <a href="http://www.efmnet.com/node/354">Privacy Policy</a>
+            <a href="http://www.festivaldellaamore/privacy">Privacy Policy</a>*
+          <br>
+            <!-- <input class="checkbox" type="checkbox" name="privacy" value="true" v-model="privacy" />Autorizzo il trattamento dei miei dati personali sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).
+             -->
+             <input class="checkbox" type="checkbox" name="privacy" value="true" v-model="marketing" />Consenso al trattamento dei dati personali per finalità di marketing.
           </div>
           <br />
 
@@ -244,8 +239,8 @@
           </div>
           <div class="alert success" v-if="success">
             <h3 class="avviso">
-              Grazie per esserti iscritto all'ecosistema Venture Thinking
-              <br />Ti aspettiamo qui, sabato 2 maggio dalle 15:00 alle 21:00 alla diretta streaming
+              Grazie per esserti iscritto al Festival dell'Amore 2020 
+              <br />presto riceverai una mail con tutti i dettagli per partecipare come pubblico e solo se lo chiederai potrai intervenire in diretta
             </h3>
           </div>
           <button class="bott" type="submit">Partecipa</button>
@@ -290,6 +285,7 @@ export default {
       note: "",
       categoria: "",
       privacy: false,
+      marketing: false,
 
       success: false,
       checka: false,
@@ -304,7 +300,7 @@ export default {
       prog: [],
       prognew: [],
       date: "",
-      videoId: "SkgTxQm9DWM",
+      videoId: "UgsGtw5xBCQ",
       playerVars: {
         autoplay: 0,
         modestbranding: 0,
@@ -358,7 +354,7 @@ export default {
   methods: {
 
     handleScroll(event) {
-      var k = window.pageYOffset ;
+      var k = window.scrollY ;
       var theta = k / 10 ;
       document.getElementById("rota").style.transform = "rotate(" + theta + "deg)";
       // if (window.pageYOffset > 50) {
@@ -397,11 +393,11 @@ export default {
             .set({
               nome: this.nome,
               cognome: this.cognome,
-              azienda: this.azienda,
-              partecipazione: this.partecipazione,
+              
+              
               email: this.email,
-              note: this.note,
-              categoria: this.categoria
+              
+              marketing: this.marketing
             });
           this.state = "synced";
           this.checka = false;
@@ -413,6 +409,11 @@ export default {
       } else {
         this.checka = true;
       }
+      this.nome = "", 
+        this.cognome = "",
+        this.email = "",
+        this.privacy = false,
+        this.marketing = false
     },
 
     toggleDat() {
@@ -735,7 +736,7 @@ body {
 .text_prog {
   padding: 10px 2vw;
   font-family: Raleway !important;
-  background: white;
+  // background: white;
   width: 40vw;
   text-align: left;
   float: right;
@@ -943,7 +944,287 @@ body {
   display: none;
 }
 
+.cuore{
+ 
+  margin-top: 10vw
+}
+
+#cor{
+  width:20vw !important
+}
+
+.rot{
+  position:fixed;
+  top: 70vh;
+  right: 10vw;
+  width: 20vh;
+  z-index: 0;
+}
+
+.sub-intro {
+  padding: 0 15vw 2vw 15vw;
+  color: white;
+  font-family: Open Sans;
+  font-weight: normal;
+  font-size: 2vw;
+  
+}
+
+.f-intro {
+  padding: 2vw 15vw;
+  color: white;
+  font-family: Open Sans Condensed;
+  font-weight: bold;
+  font-size: 3vw;
+  text-transform: uppercase;
+}
+
+
+
+.slideLeft-enter {
+  transform: translateX(100vw);
+  opacity: 0;
+  position: absolute;
+}
+
+.slideLeft-leave {
+  transform: translateX(-100vw);
+  opacity: 0;
+}
+
+.slideLeft-enter-active {
+  transition: all 1s ease-out;
+}
+
+.slideLeft-leave-active {
+  transition: all 3s ease;
+  position: absolute;
+}
+
+.slideRight-enter {
+  transform: translateX(-100vw);
+  //opacity: 0;
+}
+
+.slideRight-leave-to {
+  transform: translateX(-100vw);
+  //opacity: 0;
+}
+
+.slideRight-enter-active {
+  transition: all 1s ease-out;
+}
+
+.slideRight-leave-active {
+  transition: all 1s ease-out;
+}
+
+.parte {
+  // height: 20vw;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+}
+
+.link-part {
+  // background: white;
+  padding: 1.2vw 3vw;
+  border: 4px solid white;
+  // color: $primary-color;
+  color:white;
+  font-size: 3vw;
+  font-family: Open Sans Condensed;
+  font-weight: 700;
+  // text-decoration: underline;
+}
+
+.link-part:hover {
+  // transform: translateX(200px);
+  filter: drop-shadow(0 15px 0.2em rgba(0, 0, 0, 0.5));
+}
+
+.form-partecipa {
+  padding-top: 2vw;
+  font-family: Raleway;
+}
+.form-partecipa > form > input {
+  margin-top: 10px;
+  font-family: Raleway;
+  width: 50%;
+  border: 1px solid black;
+  padding: 10px 5px 10px 5px;
+}
+
+.form-partecipa > form > label {
+  margin-top: 2vw;
+}
+
+.check-label {
+  margin-top: 2vw;
+}
+
+.checkbox {
+  margin: 15px 5px 0px 16px;
+}
+.checkdiv{
+  margin: 20px;
+}
+.alert {
+  margin-top: 2vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+.nope {
+  background: rgb(255, 20, 51);
+}
+
+.success {
+  background: rgb(28, 214, 74);
+}
+
+.avviso {
+  font-family: Open Sans;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  padding: 0 20vh;
+}
+
+.texta {
+  border: 1px solid black;
+  max-width: 90%;
+}
+
+.bott {
+  padding: 1.2vw 3vw;
+  border: 4px solid $primary-color;
+  // color: $primary-color;
+  color:$primary-color;
+  font-size: 3vw;
+  font-family: Open Sans Condensed;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #ffffff00;
+}
+
+.bott:hover {
+  // transform: translateX(200px);
+  filter: drop-shadow(0 15px 0.2em rgba(0, 0, 0, 0.3));
+  text-decoration: underline;
+}
+
+.block {
+  height: 2px;
+  width: 100%;
+  background: black;
+}
+.el1 {
+  background: #ec008c;
+}
+
+.el2 {
+  background: #00aeee;
+}
+.el3 {
+  background: #ffc202;
+}
+.el {
+  width: 2vw;
+  height: 2vw;
+
+  border-radius: 100%;
+  display: inline-block;
+  margin-right: 2vw;
+}
+.elblock {
+  display: block;
+  font-family: raleway;
+  font-size: 20px;
+}
+
+.legenda {
+  margin-top: 2vw;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+
+.ambito {
+  width: 20px;
+  height: 20px;
+
+  border-radius: 100%;
+  float: right;
+}
+
+.back-texture {
+  background-image: url("/img2/texture.png");
+  padding: 5vw 0;
+}
+
+.f-block {
+  margin-top: 30px;
+  padding: 2vw 0;
+  background: $primary-color;
+}
+
+
+
+
+
+.biot {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.pro-img:hover {
+  //: scale(1.2);
+}
+
+.chsy {
+  text-align: center;
+  font-family: raleway;
+  font-size: 20px;
+}
+
+
 @media screen and (max-width: 1025px) {
+  .parte{
+ padding-top: 25px;
+  padding-bottom: 25px;
+  }
+  
+   .link-part{
+    font-size: 22px;
+   
+
+  }
+  .bott{
+    font-size: 22px;
+  }
+  .form-partecipa > form > input{
+    width: 80%;
+  }
+
+  .form-partecipa > form > label{
+    margin-bottom: 0;
+    margin-top: 15px;
+  }
+
+  .f-intro{
+    font-size: 17px;
+  }
+  .sub-intro{
+    font-size: 12px;
+  }
+
+  .rot{
+    display: none;
+  }
   .h-mob {
     display: block;
   }
@@ -1071,234 +1352,13 @@ body {
   .sponsor {
     padding-top: 5vh;
   }
-}
 
-.slideLeft-enter {
-  transform: translateX(100vw);
-  opacity: 0;
-  position: absolute;
-}
-
-.slideLeft-leave {
-  transform: translateX(-100vw);
-  opacity: 0;
-}
-
-.slideLeft-enter-active {
-  transition: all 1s ease-out;
-}
-
-.slideLeft-leave-active {
-  transition: all 3s ease;
-  position: absolute;
-}
-
-.slideRight-enter {
-  transform: translateX(-100vw);
-  //opacity: 0;
-}
-
-.slideRight-leave-to {
-  transform: translateX(-100vw);
-  //opacity: 0;
-}
-
-.slideRight-enter-active {
-  transition: all 1s ease-out;
-}
-
-.slideRight-leave-active {
-  transition: all 1s ease-out;
-}
-
-.parte {
-  // height: 20vw;
-  padding-top: 4vw;
-  padding-bottom: 4vw;
-}
-
-.link-part {
-  // background: white;
-  padding: 1.2vw 3vw;
-  border: 4px solid white;
-  // color: $primary-color;
-  color:white;
-  font-size: 3vw;
-  font-family: Open Sans Condensed;
-  font-weight: 700;
-  // text-decoration: underline;
-}
-
-.link-part:hover {
-  // transform: translateX(200px);
-  filter: drop-shadow(0 15px 0.2em rgba(0, 0, 0, 0.5));
-}
-
-.form-partecipa {
-  padding-top: 2vw;
-  font-family: Raleway;
-}
-.form-partecipa > form > input {
-  margin-top: 10px;
-  font-family: Raleway;
-  width: 50%;
-  border: 1px solid black;
-  padding: 10px 5px 10px 5px;
-}
-
-.form-partecipa > form > label {
-  margin-top: 2vw;
-}
-
-.check-label {
-  margin-top: 2vw;
-}
-
-.checkbox {
-  margin: 0 5px 20px 15px;
-}
-
-.alert {
-  margin-top: 2vw;
-  padding-top: 2vw;
-  padding-bottom: 2vw;
-}
-
-.nope {
-  background: rgb(255, 20, 51);
-}
-
-.success {
-  background: rgb(28, 214, 74);
-}
-
-.avviso {
-  font-family: Raleway;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 10px;
-  padding: 0 20vh;
-}
-
-.texta {
-  border: 1px solid black;
-  max-width: 90%;
-}
-
-.bott {
-  padding: 1.2vw 3vw;
-  border: 4px solid $primary-color;
-  // color: $primary-color;
-  color:$primary-color;
-  font-size: 3vw;
-  font-family: Open Sans Condensed;
-  font-weight: 700;
-  text-transform: uppercase;
-  background: #ffffff00;
-}
-
-.bott:hover {
-  // transform: translateX(200px);
-  filter: drop-shadow(0 15px 0.2em rgba(0, 0, 0, 0.3));
-  text-decoration: underline;
-}
-
-.block {
-  height: 2px;
-  width: 100%;
-  background: black;
-}
-.el1 {
-  background: #ec008c;
-}
-
-.el2 {
-  background: #00aeee;
-}
-.el3 {
-  background: #ffc202;
-}
-.el {
-  width: 2vw;
-  height: 2vw;
-
-  border-radius: 100%;
-  display: inline-block;
-  margin-right: 2vw;
-}
-.elblock {
-  display: block;
-  font-family: raleway;
+  .avviso{
+  margin: 25px 0;
   font-size: 20px;
-}
-
-.legenda {
-  margin-top: 2vw;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-bottom: 20px;
-}
-
-.ambito {
-  width: 20px;
-  height: 20px;
-
-  border-radius: 100%;
-  float: right;
-}
-
-.back-texture {
-  background-image: url("/img2/texture.png");
-  padding: 5vw 0;
-}
-
-.f-block {
-  margin-top: 30px;
-  padding: 2vw 0;
-  background: $primary-color;
-}
-
-.f-intro {
-  padding: 2vw 15vw;
   color: white;
-  font-family: raleway;
-  font-weight: bold;
-  font-size: 3vw;
-}
-
-.biot {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  font-weight: normal;
-}
-
-.pro-img:hover {
-  //: scale(1.2);
-}
-
-.chsy {
-  text-align: center;
-  font-family: raleway;
-  font-size: 20px;
-}
-
-.cuore{
- 
-  margin-top: 10vw
-}
-
-#cor{
-  width:20vw !important
-}
-
-.rot{
-  position:fixed;
-  top: 70vh;
-  right: 10vw;
-  width: 20vh;
-  z-index: 0;
+  
+  padding: 0 5vw;
+  }
 }
 </style>
