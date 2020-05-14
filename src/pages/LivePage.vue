@@ -735,7 +735,7 @@ body {
 
 .text_prog {
   padding: 10px 2vw;
-  font-family: Raleway !important;
+  font-family: Open Sans !important;
   // background: white;
   width: 40vw;
   text-align: left;
@@ -1044,11 +1044,11 @@ body {
 
 .form-partecipa {
   padding-top: 2vw;
-  font-family: Raleway;
+  font-family: Open Sans;
 }
 .form-partecipa > form > input {
   margin-top: 10px;
-  font-family: Raleway;
+  font-family: Open Sans;
   width: 50%;
   border: 1px solid black;
   padding: 10px 5px 10px 5px;
@@ -1138,7 +1138,7 @@ body {
 }
 .elblock {
   display: block;
-  font-family: raleway;
+  font-family: Open Sans;
   font-size: 20px;
 }
 
@@ -1187,7 +1187,7 @@ body {
 
 .chsy {
   text-align: center;
-  font-family: raleway;
+  font-family: Open Sans;
   font-size: 20px;
 }
 
