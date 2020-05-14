@@ -1227,11 +1227,11 @@ body {
 
 .form-partecipa{
   padding-top: 2vw;
-  font-family: Raleway;
+  font-family: Open Sans;
 }
 .form-partecipa > form > input{
   margin-top: 10px;
-  font-family: Raleway;
+  font-family:  Open Sans;
   width: 50%;
   border: 1px solid black;
   padding: 10px 5px 10px 5px
@@ -1267,7 +1267,7 @@ body {
 }
 
 .avviso{
-  font-family: Raleway;
+  font-family:  Open Sans;
   font-weight: bold;
   color: white;
   margin-bottom: 10px;
@@ -1284,7 +1284,7 @@ body {
   padding: 1vw 3vw;
   color: white;
   border:rgba(0, 0, 0, 0.1);
-  font-family:Raleway;
+  font-family:Open Sans;
   font-weight:bold;
   font-size: 2vw;
   margin-bottom: 3vw;
@@ -1316,7 +1316,7 @@ body {
 }
 .elblock{
  display: block;
- font-family: raleway;
+ font-family: Open Sans;
  font-size: 20px;
 }
 
@@ -1352,7 +1352,7 @@ body {
 .f-intro{
   padding: 2vW 15vw;
   color: white;
-  font-family: raleway;
+  font-family: Open Sans;
   font-weight: bold;
   font-size: 3vw;
 }
@@ -1372,7 +1372,7 @@ body {
 
 .chsy{
   text-align: center;
-  font-family:raleway ;
+  font-family:Open Sans;
   font-size: 20px;
   
 }
