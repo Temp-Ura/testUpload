@@ -1,14 +1,20 @@
 
 <template>
-  <navbar position="fixed" type="white" menu-classes="ml-auto">
+  <navbar position="fixed" type="primary" menu-classes="ml-auto">
     <template>
 
 
-      <anchor-router-link
+      <!-- <anchor-router-link
         class="navbar-brand"
         :to="{name: 'starter', hash: '#header'}"
         :scrollOptions="scrollOptions"
-      ><img class="logo-men" src="/img2/logo-vt-s.png"></anchor-router-link>
+      ><img class="logo-men" src="/img2/logo-vt-s.png"></anchor-router-link> -->
+      <anchor-router-link
+        class="navbar-brand logo"
+        :to="{name: 'starter', hash: '#header'}"
+        :scrollOptions="scrollOptions"
+      >IL FESTIVAL DELL'AMORE 2020</anchor-router-link>
+
  
     </template>
     <template slot="navbar-menu">
@@ -39,7 +45,7 @@
      <li class="nav-item hover"></li>
       <li class="nav-item hover">
         <a class="nav-link" href="https://www.linkedin.com/company/venturethinking/">
-          <i class="fab fa-linkedin"></i>
+          <i class="fab fa-instagram"></i>
         </a>
       </li>
       <li class="nav-item hover">
@@ -47,11 +53,11 @@
           <i class="fab fa-facebook"></i>
         </a>
       </li>
-      <!--<li class="nav-item hover">
+      <li class="nav-item hover">
         <a class="nav-link" href="https://www.youtube.com/channel/UCP8R6WbHCErZhvlEC-hmT_w">
           <i class="fab fa-youtube"></i>
         </a>
-      </li> -->
+      </li>
     </template>
   </navbar>
 </template>
@@ -216,11 +222,28 @@ export default {
 <style scoped>
 .logo-men{
   width:130px;
+  /* cazzo */
+}
+
+.navbar-brand{
+  font-family: Open Sans;
+  font-weight: 400;
+  
+}
+
+.logo{
+  font-family: Open Sans Condensed;
+  font-weight: 700;
+  font-size: 18px !important;
+  
+  
 }
 
 @media screen and (max-width: 1025px) {
   .logo-men{
   width:100px;
 }
+
+
 }
 </style>

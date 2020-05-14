@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-6">
           <h4>Menu</h4>
-          <navbar type="danger">
+          <navbar type="primary">
             <a class="navbar-brand" href="#">Menu</a>
             <button
               class="navbar-toggler"

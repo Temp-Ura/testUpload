@@ -1,437 +1,56 @@
 [
   {
-    "dalla": "15:00",
-    "alle": "15:20",
-    "interviene": [
-      {
-        "nome": "Franco Bolelli",
-        "ruolo": "Filosofo, Saggista"
-      },
-      {
-        "nome": "Daniele Di Fausto",
-        "ruolo": "CEO eFM"
-      },
-      {
-        "nome": "Maura Gancitano",
-        "ruolo": "Filosofa, Scrittrice"
-      },
-      {
-        "nome": "Andrea Colamedici",
-        "ruolo": "Filosofo, Imprenditore"
-      }
-    ],
-    "titolo": "PRESENTAZIONE VENTURE THINKING/ PHOENIX",
-    "ambito": "WELCOME AND OPENING REMARKS",
-    "sezione": 1,
-    "image": "1.png",
-    "link":324
+    "dalla": "20:30",
+    "alle": "21:00",
+    "interviene": "Sofia Viscardi",
+    "titolo": "Amore a distanza",
+    "ambito": "Amore a distanza: una generazione digitale alle prese con la lontananza",
+    "image": "1.jpg"
   },
-  
+
   {
-    "link":   1415    ,"dalla": "15:20",
-    "alle": "15:30",
-    "interviene": [
-      {
-        "nome": "Sandra Mitchell",
-        "ruolo": "Pittsburgh University"
-      }
-    ],
-    "modera": [
-      "Marta Bertolaso"
-    ],
-    "titolo": "IL FUTURO DEI SISTEMI COMPLESSI",
-    "ambito": "ENVISIONING VENTURES",
-    "sezione": 1,
-    "image": "2.png"
+    "dalla": "21:00",
+    "alle": "21:30",
+    "interviene": "La Pina",
+    "titolo": "Bro ipsum dolor sit amet",
+    "ambito": "Stoked twister couloir chillax schwag bowl",
+    "image": "2.jpg"
   },
+
   {
-    "link":   2118    ,"dalla": "15:30",
-    "alle": "15:45",
-    "interviene": [
-      {
-        "nome": "Stefano Zamagni",
-        "ruolo": "Pontificia Accademia delle Scienze Sociali",
-        "bio": "Economista, presidente della Pontificia accademia delle Scienze Sociali. Sul Coronavirus: nel “nuovo mondo” del dopovirus il nemico numero uno sarà il liberismo. E insieme ad esso, almeno in Italia, la burocrazia, l'ostinazione nel rifiutare il principio di sussidiarietà, la resistenza alle opportunità che la tecnologia ha dimostrato di poter fornire.  In Italia, per esempio, servirebbe un think tank, un gruppo di esperti  politicamente indipendenti e  desiderosi di dare una mano al loro paese, in grado di elaborare nel termine di poche settimane un vasto progetto con cui ripartire, quando si avvierà finalmente la famosa “fase 2”. Importanti per lui i temi legati alla solidarietà."
-      }
-    ],
-    "modera": [
-      "Maura Gancitano",
-      "Marco Simoni"
-    ],
-    "titolo": "ECONOMIA CIVILE",
-    "ambito": "ENVISIONING VENTURES",
-    "sezione": 1,
-    "image": "3.png"
-    
+    "dalla": "21:30",
+    "alle": "22:00",
+    "interviene": "Franco Bolelli e Manuela Mantegazza",
+    "titolo": "I nuovi paradigmi del per sempre",
+    "ambito": "Strategie e obiettivi per uscire vincenti dalla pandemia, reinventare l’amore e rilanciarlo ancora più potente quando l’emergenza virus sarà finita.",
+    "image": "3.jpg"
   },
+
   {
-    
-    "link":   3073    ,"dalla": "15:45",
-    "alle": "15:55",
-    "interviene": [
-      {
-        "nome": "Eugenio Guglielmelli",
-        "ruolo": "Prorettore alla Ricerca - Università Campus Bio-Medico di Roma"
-      }
-    ],
-    "modera": [
-      "Andrea Colamedici",
-      "Marta Bertolaso"
-    ],
-    "titolo": "PENSIERO CREATIVO INNOVATIVO",
-    "ambito": "ENVISIONING THINKING",
-    "sezione": 1,
-    "image": "6.png"
-  },
-  {
-    "link":   3771    ,"dalla": "15:55",
-    "alle": "16:10",
-    "interviene": [
-      {
-        "nome": "Marta Bertolaso",
-        "ruolo": "Prof. Filosofia Scienza - Università Campus Bio-Medico di Roma"
-      },
-      {
-        "nome": "Massimo Inguscio",
-        "ruolo": "Presidente CNR"
-      }
-    ],
-    "titolo": "",
-    "ambito": "ENVISIONING THINKING",
-    "sezione": 1,
-    "image": "7a.png"
-  },
-  {
-    "link":   4574    ,"dalla": "16:10",
-    "alle": "16:20",
-    "interviene": [
-      {
-        "nome": "Fabrizio Landi",
-        "ruolo": "Fondazione R&I - Ricerca e Imprenditorialità"
-      },
-      {
-        "nome": "Riccardo Pietrabissa",
-        "ruolo": "Rettore Iuss Pavia, past president NETVAL"
-      },
-      {
-        "nome": "Daniele Di Fausto",
-        "ruolo": "CEO eFM"
-      }
-    ],
-    "modera": [
-      "Marta Bertolaso",
-      "Andrea Colamedici"
-    ],
-    "titolo": "TAVOLA ROTONDA RICERCA E INNOVAZIONE",
-    "ambito": "ENVISIONING THINKING",
-    "sezione": 1,
-    "image": "7b.png"
-  },
-  {
-    "link":  5318    ,"dalla": "16:20",
-    "alle": "16:25",
-    "interviene": [
-      {
-        "nome": "Franco Bolelli",
-        "ruolo": "Filosofo, Saggista"
-      },
-      {
-        "nome": "Daniele Di Fausto",
-        "ruolo": "CEO eFM"
-      }
-    ],
-    "titolo": "INTRODUZIONE AL TEMA DEL PURPOSE",
-    "ambito": "IL PURPOSE NELLE IMPRESE ECOSISTEMICHE",
-    "sezione": 2,
-    "image": "8.png"
-  },
-  {
-    "link":  5564    ,"dalla": "16:25",
-    "alle": "16:40",
-    "interviene": [
-      {
-        "nome": "Robert Quinn",
-        "ruolo": "University of Michigan"
-      }
-    ],
-    "modera": [
-      "Daniele Di Fausto"
-    ],
-    "titolo": "IL PURPOSE IN TEMPI DI CRISI",
-    "ambito": "IL PURPOSE NELLE IMPRESE ECOSISTEMICHE",
-    "sezione": 2,
-    "image": "9.png"
-  },
-  {
-    "link":  6725    ,"dalla": "16:40",
-    "alle": "16:55",
-    "interviene": [
-      {
-        "nome": "Tiziano Onesti",
-        "ruolo": "Prof. Economia - Università degli studi di Roma Tre"
-      },
-      {
-        "nome": "Mauro Caruccio",
-        "ruolo": "CEO Toyota Motor Italia"
-      },
-      {
-        "nome": "Ugo De Carolis"
-      }
-    ],
-    "modera": [
-      "Franco Bolelli",
-      "Daniele Di Fausto"
-    ],
-    "titolo": "TAVOLA ROTONDA",
-    "ambito": "IL FUTURO DELLA MOBILITA' E DELLA SALUTE",
-    "sezione": 2,
-    "image": "10.png"
-  },
-  {
-    "link":  7478    ,"dalla": "16:55",
-    "alle": "17:15",
-    "interviene": [
-      {
-        "nome": "Jeffrey Pfeffer",
-        "ruolo": "Professor of Organizational Behavior at the Stanford University, Visiting Professor Iese",
-        "bio": "Teorico del business americano ed uno dei pensatori di gestione più influenti di oggi. Le sue opere trattano analizzano gli ambiti della teoria organizzativa e della gestione delle risorse umane. La sua ricerca attuale si concentra sugli effetti dell’ambiente lavorativo sulla salute e benessere dell’uomo, potere e leadership nelle organizzazioni, e su come interpretare il tempo come denaro orienti le scelte delle persone verso un modo di impiegare il proprio tempo che promuove l’infelicità."
-      }
-    ],
-    "modera": [
-      "Daniele Di Fausto"
-    ],
-    "titolo": "INTERVISTA A PFEFFER",
-    "ambito": "IL FUTURO DELLA SALUTE E DEL LAVORO",
-    "sezione": 2,
-    "image": "11.png"
-  },
-  {
-    "link":  8468    ,"dalla": "17:15",
-    "alle": "17:30",
-    "interviene": [
-      {
-        "nome": "Marco Bentivogli",
-        "ruolo": "Segretario FIM CISL"
-      },
-      {
-        "nome": "Nicola Redi",
-        "ruolo": "Managing Partner Venture Factory"
-      },
-      {
-        "nome": "Massimo Temporelli",
-        "ruolo": "Innovatore, Fisico, Antropologo"
-      }
-    ],
-    "modera": [
-      "Maura Gancitano",
-      "Marta Bertolaso"
-    ],
-    "titolo": "TAVOLA ROTONDA",
-    "ambito": "IL FUTURO DELLA SALUTE E DEL LAVORO",
-    "sezione": 2,
-    "image": "12.png"
-  },
-  {
-    "link":  9736    ,"dalla": "17:30",
-    "alle": "17:45",
-    "interviene": [
-      {
-        "nome": "Maria Chiara Carrozza",
-        "ruolo": "Presidente del Gruppo Nazionale di Bioingegneria"
-      },
-      {
-        "nome": "Luca Solari",
-        "ruolo": "Organizzazione Aziendale Università Statale Milano"
-      },
-      {
-        "nome": "Franco Amicucci",
-        "ruolo": "Presidente Skilla"
-      }
-    ],
-    "modera": [
-      "Andrea Colamedici",
-      "Maura Gancitano"
-    ],
-    "titolo": "TAVOLA ROTONDA",
-    "ambito": "IL FUTURO DEL LAVORO E DELL'APPRENDIMENTO",
-    "sezione": 2,
-    "image": "13.png"
-  },
-  {
-    "link":  10487    ,"dalla": "17:45",
-    "alle": "17:55",
-    "interviene": [
-      {
-        "nome": "Francesco Sperandini",
-        "ruolo": "CEO Esdigis4u"
-      }
-    ],
-    "modera": [
-      "Maura Gancitano"
-    ],
-    "titolo": "INTERVISTA A SPERANDINI",
-    "ambito": "IL FUTURO DEL LAVORO E DELL'AMBIENTE (SDG'S)",
-    "sezione": 2,
-    "image": "15.png"
-  },
-  {
-    "link":  11263    ,"dalla": "17:55",
-    "alle": "18:15",
-    "interviene": [
-      {
-        "nome": "Marco Simoni",
-        "ruolo": "Presidente Human Technopole"
-      },
-      {
-        "nome": "Andrea Quacivi",
-        "ruolo": "Ceo Sogei"
-      },
-      {
-        "nome": "Elena Battaglini",
-        "ruolo": "Sociologa del territorio, Fondazione Di Vittorio"
-      }
-    ],
-    "modera": [
-      "Andrea Colamedici",
-      "Daniele Di Fausto"
-    ],
-    "titolo": "TAVOLA ROTONDA",
-    "ambito": "IL FUTURO DELLA CITTA E DEI SERVIZI DIGITALI",
-    "sezione": 2,
-    "image": "16.png"
-  },
-  {
-    "link":  12531    ,"dalla": "18:15",
-    "alle": "18:20",
-    "interviene": [
-      {
-        "nome": "Andrea Rossi",
-        "ruolo": "Direttore Generale UCBM"
-      }
-    ],
-    "modera": [
-      "Daniele Di Fausto"
-    ],
-    "titolo": "PARTNER DEL PROGETTO PHOENIX",
-    "ambito": "PMI E L'ACCELLERAZIONE ECOSISTEMICA",
-    "sezione": 3,
-    "image": "17a.png"
-  },
-  {
-    "link":  12875   ,"dalla": "18:20",
-    "alle": "18:30",
-    "interviene": [
-      {
-        "nome": "Roberto Macciò",
-        "ruolo": "Custom Programs Director IESE Business School"
-      }
-    ],
-    "modera": [
-      "Andrea Colamedici"
-    ],
-    "titolo": "PARTNER DEL PROGETTO PHOENIX",
-    "ambito": "PMI E L'ACCELLERAZIONE ECOSISTEMICA",
-    "sezione": 3,
-    "image": "17b.png"
-  },
-  {
-    "link":  13549     ,"dalla": "18:30",
-    "alle": "18:50",
-    "interviene": [
-      {
-        "nome": "Yago De la Cierva",
-        "ruolo": "IESE Business School"
-      }
-    ],
-    "modera": [
-      "Andrea Colamedici"
-    ],
-    "titolo": "STRATEGIE DI COMUNICAZIONE IN TEMPO DI CRISI",
-    "ambito": "PMI E L'ACCELLERAZIONE ECOSISTEMICA",
-    "sezione": 3,
-    "image": "18.png"
-  },
-  {
-    "link":  14867    ,"dalla": "18:50",
-    "alle": "19:10",
-    "interviene": [
-      {
-        "nome": "Enrico Loccioni",
-        "ruolo": "Presidente Loccioni"
-      },
-      {
-        "nome": "Serena Porcari",
-        "ruolo": "CEO Dynamo"
-      }
-    ],
-    "modera": [
-      "Andrea Colamedici",
-      "Daniele Di Fausto"
-    ],
-    "titolo": "ESEMPI DI ECOSISTEMI",
-    "ambito": "PMI E L'ACCELLERAZIONE ECOSISTEMICA",
-    "sezione": 3,
-    "image": "19.png"
-  },
-  {
-    "link":  16129   ,"dalla": "19:10",
-    "alle": "19:30",
-    "interviene": [
-      {
-        "nome": "Tal Ben Shahar",
-        "ruolo": "Positive Psychology Harward",
-        "bio": "Autore e docente, ha tenuto due delle più importanti e ampie cattedre nella storia di Harvard: Positive Psychology and The Psychology of Leadership. Oggi, offre consulenza e docenza in tutto il mondo a executives di multinazionali, pubbliche amministrazioni e popolazioni a rischio. Gli argomenti delle sue docenze includono leadership, felicità, educazione, innovazione, etica, autorealizzazione, resilienza, goal setting e mindfullness."
-      }
-    ],
-    "modera": [
-      "Daniele Di Fausto"
-    ],
-    "titolo": "INTERVISTA A TAL BEN SHAHAR",
-    "ambito": "PMI E L'ACCELLERAZIONE ECOSISTEMICA",
-    "sezione": 3,
-    "image": "20.png"
-  },
-  {
-    "link":  17155  ,"dalla": "19:30",
-    "alle": "19:45",
-    "interviene": [
-      {
-        "nome": "Maximo Ibarra",
-        "ruolo": "CEO Sky Italia"
-      }
-    ],
-    "modera": [
-      "Daniele Di Fausto"
-    ],
-    "titolo": "INTERVISTA A IBARRA",
-    "ambito": "PMI E L'ACCELLERAZIONE ECOSISTEMICA",
-    "sezione": 3,
-    "image": "23.png"
-  },
-  {
-    "link":  18030  ,"dalla": "19:45",
-    "alle": "20:00",
-    "interviene": [
-      {
-        "nome": "Andrea Colamedici",
-        "ruolo": "Filosofo,Imprenditore"
-      },
-      {
-        "nome": "Daniele Di Fausto",
-        "ruolo": "CEO eFM"
-      },
-      {
-        "nome": "Franco Bolelli",
-        "ruolo": "Filosofo, Saggista"
-      },
-      {
-        "nome": "Maura Gancitano",
-        "ruolo": "Filosofa, Scrittrice"
-      }
-    ],
-    "titolo": "CLOSING",
+    "dalla": "22:00",
+    "alle": "22:30",
+    "interviene": "Paola Maugeri",
+    "titolo": "Ode a quell'amore che tutto permea",
     "ambito": "",
-    "sezione": 3,
-    "image": "22.png"
+    "image": "4.jpg"
+  },
+
+  {
+    "dalla": "22:30",
+    "alle": "23:00",
+    "interviene": "Mapi Danna",
+    "titolo": "Genitori in quarantena e l'amore tuttofare",
+    "ambito": "L’impatto con nuove fragilità e la scoperta di nuovi dei talenti. Che cosa ne faremo? Come siamo cambiati?",
+    "image": "5.jpg"
+  },
+
+  {
+    "dalla": "23:00",
+    "alle": "23:30",
+    "interviene": "Maura Gancitano e Andrea Colamedici",
+    "titolo": "La complicità",
+    "ambito": "Si può essere anche migliori amici del proprio partner? Secondo noi sì. Quando l’amore è anche profonda amicizia, il mistero non svanisce, anzi: cresce.",
+    "image": "6.jpg"
   }
+  
 ]

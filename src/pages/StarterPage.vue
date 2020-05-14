@@ -30,7 +30,10 @@
           28 Marzo
       </h2>-->
       <div id="manifesto" style="background:#ec008c">
-         <iframe class="video" src="https://www.youtube.com/embed/TRV6pkDkPS4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <div class="video">
+       <youtube  :video-id="videoId" :fitParent="true" :resize="true" :player-vars="playerVars" ref="youtube" @playing="playing"></youtube>
+  </div>
+         <!-- <iframe class="video" src="https://www.youtube.com/embed/TRV6pkDkPS4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         <!-- <iframe
           v-else
           class="video-old"
@@ -64,8 +67,8 @@
       </div>
 
 <div class="programma" id="palinsesto"> 
-  <h2 id="tito" class="progra" >PROGRAMMA</h2>
-  <section class=legenda> 
+  <h2  id="tito" class="progra" >PROGRAMMA</h2>
+  <h3 class="chsy">Clicca sull'intervento che ti interessa</h3>  <section class=legenda> 
     <div class="elblock"><div class="el el1"></div>Visioni /Scenari </div><div class="elblock"><div class="el el2"></div>Strategie Ecosistemiche</div><div class="elblock"> <div class="el el3"></div>Progetto Phoenix</div>
   </section>
   </div>
@@ -73,14 +76,17 @@
   <section class="tab_prog" v-for="item in prog" v-bind:key="item.length">
             
             <div class="pro-img">
-              <img class="profile_img" :src="'/img-rel/' + item.image" />
+              <a v-on:click="viewYT(item.link)" v-scroll-to="{el:'#manifesto',  offset: -50}">
+              <img class="profile_img" :src="'/img-rel/' + item.image"> </a>
             </div>
             <div class="text_prog">
               <div class="ambito" :class="{ 'el1': item.sezione == 1, 'el2': item.sezione == 2 ,'el3': item.sezione == 3}"></div>
               <h3 class="orario">{{item.dalla}} - {{item.alle}}</h3>
 
              <h5 class="amb" >{{item.ambito}} </h5> 
-              <h4  class="titolo" style="color:black !important">{{item.titolo}}</h4>
+              <a href="#" 
+              :class="{ 'tit1': item.sezione == 1, 'tit2': item.sezione == 2 ,'tit3': item.sezione == 3}"
+              v-on:click="viewYT(item.link)" v-scroll-to="{el:'#manifesto',  offset: -50}" class="titolo" >{{item.titolo}}</a>
               <div class="inter" v-for="ite in item.interviene" v-bind:key="ite.length">{{ite.nome}} <span v-if="ite.ruolo" class="ruolo">({{ite.ruolo}})</span>
               <div class="biot" v-if="ite.bio">{{ite.bio}}</div>
               </div>
@@ -348,6 +354,11 @@
 <script>
 import "animate.css";
 const axios = require("axios");
+import Vue from 'vue'
+import VueYoutube from 'vue-youtube'
+ 
+Vue.use(VueYoutube)
+
 
 
 import { db } from '@/firebase';
@@ -383,6 +394,8 @@ export default {
       success:false,
       checka:false,
 
+      hover:false,
+
 
       newPcf: true,
       live: false,
@@ -392,6 +405,11 @@ export default {
       prog: [],
       prognew: [],
       date: "",
+      videoId: 'TRV6pkDkPS4',
+      playerVars: {
+        autoplay: 1,
+
+      },
 
       scrollOptions: {
         container: "body",
@@ -403,7 +421,8 @@ export default {
         onDone: false,
         onCancel: false,
         x: false,
-        y: true
+        y: true,
+        
       }
 
     };
@@ -433,12 +452,26 @@ export default {
     newPc() {
       return this.$store.getters.newPc;
       // return store.getters.newPc
+    },
+
+    player() {
+      return this.$refs.youtube.player
     }
   },
 
   methods: {
 
-
+      viewYT(k) {
+      this.$refs.youtube.player.seekTo(k, true)
+      //this.$refs.youtube.player.playVideo()
+      },
+      playVideo() {
+      this.$refs.youtube.player.seekTo(79)
+    
+    },
+    playing() {
+      // console.log('\o/ we are watching!!!')
+    },
 
     async updateFirebase() {
       if(this.nome!= "" && this.cognome!= "" && this.email!= "" && this.privacy== true ){
@@ -508,6 +541,8 @@ export default {
   // // },
 
   beforeMount() {
+
+    
     // var now = new Date();
     // var sta = new Date("4 April 2020 10:00:00 GMT+0200");
     // this.date = sta;
@@ -683,13 +718,24 @@ export default {
   cursor: pointer;
 }
 
-.video {
-  /*position: absolute;*/
+iframe{
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw !important;
   height: 57vw;
   border: 20px solid #ec008c;
+}
+
+.video {
+  /*position: absolute;*/
+  margin: 0 auto;
+  //width: 500px;
+  //display: block;
+   height: 50.4vw;
+   width: 90vw;
+   max-width: 1200px;
+  //border: 20px solid #ec008c;
+  //padding: 50px;
 }
 
 .video-old {
@@ -697,7 +743,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 57vw;
+  height: 57vw !important;
   border: 20px solid #259B92;
 }
 
@@ -833,7 +879,22 @@ body {
   margin-top: 0px;
   margin-bottom: 15px;
   font-weight: bold;
+  text-decoration: underline;
+  color: black;
 }
+
+.tit1:hover{
+  color: #ec008c;
+}
+
+.tit2:hover{
+  color: #00aeee
+}
+.tit3:hover{
+  color: #ffc202
+}
+
+
 
 .inter {
   max-width: 450px;
@@ -890,6 +951,7 @@ body {
 #manifesto {
   //background: #259B92;
   margin-bottom: 0px;
+  padding-top: 2vw;
 }
 
 #main-title {
@@ -1300,5 +1362,18 @@ body {
   margin-bottom: 10px;
   font-size: 14px;
   font-weight: normal;
+}
+
+.pro-img:hover{
+
+ 
+ transform: scale(1.2);
+}
+
+.chsy{
+  text-align: center;
+  font-family:raleway ;
+  font-size: 20px;
+  
 }
 </style>

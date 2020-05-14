@@ -6,8 +6,9 @@ import StarterFooter from './layout/StarterFooter.vue';
 import Live from './pages/LivePage.vue';
 import LiveNavbar from './layout/LiveNavbar.vue';
 import VueYoutube from 'vue-youtube'
+import UIkit from "uikit";
 
-Vue.use(Router, VueYoutube);
+Vue.use(Router, VueYoutube, UIkit);
 
 export default new Router({
   mode: "history",
