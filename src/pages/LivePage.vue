@@ -123,6 +123,9 @@
         <a href="https://www.triennale.org/" target="_blank">
           <img class="logo-2" src="/img2/triennale.png" />
         </a>
+                  <a href="https://tlon.it/" target="_blank">
+            <img class="logo-1" src="/img2/Logo_Tlon_Black.png" />
+          </a>
        
       </section>
 
@@ -243,7 +246,7 @@
               <br />Giovedì 21 riceverai una mail con il link per partecipare come pubblico e solo se lo chiederai potrai intervenire in diretta
             </h3>
           </div>
-          <button class="bott" type="submit">Partecipa</button>
+          <button v-if="!success" class="bott" type="submit">Partecipa</button>
         </form>
       </div>
     </div>
@@ -1222,7 +1225,7 @@ body {
     font-size: 12px;
   }
 
-  .rot{
+  .rot {
     display: none;
   }
   .h-mob {
