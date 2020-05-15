@@ -229,7 +229,7 @@
 
           <div class="checkdiv">
             <input class="checkbox" type="checkbox" name="privacy" value="true" v-model="privacy" />Accetto i Termini e Condizioni del Servizio e
-            <a href="http://www.festivaldellamore.it/privacy-policy.pdf">Privacy Policy</a>*
+            <a href="/privacy-policy.pdf">Privacy Policy</a>*
           <br>
             <!-- <input class="checkbox" type="checkbox" name="privacy" value="true" v-model="privacy" />Autorizzo il trattamento dei miei dati personali sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).
              -->
