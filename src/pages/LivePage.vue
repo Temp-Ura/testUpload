@@ -243,7 +243,7 @@
           <div class="alert success" v-if="success">
             <h3 class="avviso">
               Grazie per esserti iscritto al Festival dell'Amore 2020 
-              <br />Giovedì 21 riceverai una mail con il link per partecipare come pubblico e solo se lo chiederai potrai intervenire in diretta
+              <br />Giovedì 21 alle 20:00 riceverai una mail con il link per partecipare come pubblico e solo se lo chiederai potrai intervenire in diretta
             </h3>
           </div>
           <button v-if="!success" class="bott" type="submit">Partecipa</button>
