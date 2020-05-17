@@ -22,6 +22,9 @@ import store from "./store";
 import NowUiKit from './plugins/now-ui-kit';
 import VueFire from 'vuefire'
 // omitted
+import * as netlifyIdentityWidget from "netlify-identity-widget";
+
+netlifyIdentityWidget.init();
 
 import { firestorePlugin } from 'vuefire'
 Vue.use(firestorePlugin, { wait: true })

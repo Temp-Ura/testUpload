@@ -9,15 +9,18 @@
   },
   "dependencies": {
     "animate.css": "^3.7.2",
+    "apexcharts": "^3.19.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.3.0",
     "debounce": "^1.2.0",
     "element-ui": "^2.5.4",
     "firebase": "^7.14.2",
+    "netlify-identity-widget": "^1.6.0",
     "nouislider": "^11.1.0",
     "uikit": "^3.4.6",
     "vue": "^2.6.6",
     "vue-anchor-router-link": "^0.8.4",
+    "vue-apexcharts": "^1.5.3",
     "vue-lazy-load": "^0.0.7",
     "vue-lazyload": "^1.2.6",
     "vue-router": "^3.0.2",
@@ -32,7 +35,7 @@
     "@vue/cli-plugin-eslint": "^3.4.0",
     "@vue/cli-service": "^4.2.3",
     "babel-plugin-component": "^1.1.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.6"
   }

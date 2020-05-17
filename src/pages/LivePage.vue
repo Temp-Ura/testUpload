@@ -146,6 +146,17 @@
         
       </section>
 
+       <h2 id="tito" class="regards">Technical Partner</h2>
+
+      <section class="loghi-2">
+        <a href="https://plesh.co/" target="_blank">
+          <img class="logo-2" src="/img2/plesh.png" />
+        </a>
+        
+      </section>
+
+      
+
      
 
       <div class="block"></div>

@@ -7,12 +7,15 @@ import Live from './pages/LivePage.vue';
 import LiveNavbar from './layout/LiveNavbar.vue';
 import VueYoutube from 'vue-youtube'
 import UIkit from "uikit";
+import data from "./pages/data.vue";
+import signin from "./pages/signin.vue";
+import * as netlifyIdentityWidget from "netlify-identity-widget";
 
 Vue.use(Router, VueYoutube, UIkit);
 
-export default new Router({
+const router = new Router({
   mode: "history",
-  // base: process.env.BASE_URL,
+  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
@@ -27,6 +30,39 @@ export default new Router({
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' },
         
+      }
+    },
+    {
+      path: '/signin',
+      name: 'signin',
+      components: {
+        default: signin,
+        header: LiveNavbar,
+        // header: StarterNavbar,
+        footer: StarterFooter,
+      },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' },
+        
+      }
+    },
+    {
+      path: '/data',
+      name: 'data',
+      components: {
+        default: data,
+        header: LiveNavbar,
+        // header: StarterNavbar,
+        footer: StarterFooter,
+      },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' },
+        
+      },
+      meta: {
+        requiresAuth: true
       }
     },
     {
@@ -57,3 +93,18 @@ export default new Router({
 //     }
 // }
 });
+
+router.beforeEach((to, from, next) => {
+  const currentUser = netlifyIdentityWidget.currentUser();
+  const requiresAuth = to.matched.some(record => {
+    return record.meta.requiresAuth;
+  });
+
+  if (requiresAuth && !currentUser) {
+    next("signin");
+  } else {
+    next();
+  }
+});
+
+export default router;
