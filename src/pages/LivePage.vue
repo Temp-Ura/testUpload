@@ -314,9 +314,9 @@ export default {
       prog: [],
       prognew: [],
       date: "",
-      videoId: "UgsGtw5xBCQ",
+      videoId: "coLuD5kW5AM",
       playerVars: {
-        autoplay: 0,
+        autoplay: 1,
         modestbranding: 0,
         controls: 0,
         showinfo: 0,
