@@ -85,11 +85,18 @@ mounted(){
       .then(snap => {
         const testCollection = [];
         snap.forEach(doc => {
-          testCollection.push([new Date(doc.id), i++] );
+          testCollection.push([new Date(doc.id)]);
+
         });
+
+    testCollection.sort(function(a, b) {
+    var dateA = a[0], dateB = b[0];
+    return dateA - dateB;
+});
+        testCollection.forEach(element => element.splice(1,0,i++))
         //console.log(testCollection)
         this.form = testCollection
-        this.form2 = testCollection.filter(a => a[1] % 5 == 0); 
+        //this.form2 = testCollection.filter(a => a[1] % 5 == 0); 
         this.series = [
             {
                 name: "Iscrizioni",
