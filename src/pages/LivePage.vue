@@ -145,6 +145,15 @@
         </a>
         
       </section>
+      
+            <h2 id="tito" class="regards">Media Partner</h2>
+
+      <section class="loghi-2">
+        <a href="https://www.paramountnetwork.it/vh1" target="_blank">
+          <img class="logo-2" src="/img2/vh1.png" />
+        </a>
+        
+      </section>
 
        <h2 id="tito" class="regards">Technical Partner</h2>
 
@@ -314,7 +323,7 @@ export default {
       prog: [],
       prognew: [],
       date: "",
-      videoId: "coLuD5kW5AM",
+      videoId: "u7SRSKGIf5I",
       playerVars: {
         autoplay: 1,
         modestbranding: 0,
