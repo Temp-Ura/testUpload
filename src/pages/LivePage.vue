@@ -50,8 +50,8 @@
           </div>
           <div class="text_prog" uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.4">
             
-            <h3 class="orario">{{item.dalla}} - {{item.alle}}</h3>
-
+            <h3 v-if="item.dalla!=''" class="orario">{{item.dalla}} - {{item.alle}}</h3>
+            <h3 v-else class="orario">CON LA PARTECIPAZIONE </h3>
             
             <!-- <a
               href="#"
