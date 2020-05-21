@@ -16,7 +16,7 @@
           >PARTECIPA COME PUBBLICO</a>
         </div>
 
-        <div class="video" v-if="!live">
+        <div class="video" v-if="!livevid">
           <youtube
             :video-id="videoId"
             :fitParent="true"
@@ -27,7 +27,7 @@
           ></youtube>
         </div>
 
-        <div class="video livevid" v-if="live">
+        <div class="video livevid" v-if="livevid">
           <youtube
             :video-id="videoIdLive"
             :fitParent="true"
@@ -285,7 +285,7 @@
              <div class="avviso new-avv" v-if="!live && prelive">
               <h3 class="avviso new-tt">GRAZIE PER ESSERTI ISCRITTO <br> AL FESTIVAL DELL'AMORE 2020</h3>
               <h5 class="sub-avviso">Utilizza questo link per collegarti diretta e per partecipare come pubblico dalle <span class="empha">20:20</span></h5>
-              <textarea id="myInput" rows="2" cols="25" readonly>
+              <textarea id="myInput" readonly>
                 https://us02web.zoom.us/j/2500420200
               </textarea> <br>
               <button class="bott" v-on:click="copyClip">Copia link</button> <br>
@@ -355,7 +355,7 @@ export default {
       live: false,
       prelive: false,
       copied: false,
-
+      livevid: false,
 
 
 
@@ -524,6 +524,9 @@ export default {
       
         if(star - this.ora < 3600000) {
           this.prelive = true;
+          if(star - this.ora < 300000) {
+            this.livevid = true;
+          }
           //console.log ("%c ASPETTA POCO", "color:orange");
         if (star - this.ora < 0) {
           this.live = true;
@@ -578,7 +581,9 @@ export default {
       if (sta - now < 3600000) {
         //if (sta - now < 60000) {
         this.prelive = true;
-        //
+        if (sta - now < 300000) {
+          this.livevid = true;
+        }//
       } 
       this.timer = setInterval(this.checkTime, 30000);
     } else {
@@ -632,6 +637,8 @@ export default {
   margin-bottom: 20px;
   resize: none;
   padding: 7px 0;
+  text-align: center;
+  width: 90%;
 }
 
 .avviso > .bott{
@@ -1532,13 +1539,14 @@ body {
 }
 
 #myInput{
-  font-size: 18px;
+  font-size: 12px;
   background: rgb(143, 255, 171);
   border: 3px solid white;
   margin-top: 20px;
   margin-bottom: 20px;
   resize: none;
   padding: 7px 0;
+  width: 100%;
 }
 
 .avviso > .bott{
