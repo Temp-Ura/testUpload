@@ -27,10 +27,10 @@
           ></youtube>
         </div>
 
-        <div class="video livevid" v-else>
+        <div class="video livevid" v-if="live">
           <youtube
             :video-id="videoIdLive"
-            :fitParent="false"
+            :fitParent="true"
             :resize="true"
             :player-vars="playerVarsLive"
             ref="youtube"
@@ -286,7 +286,7 @@
               <h3 class="avviso new-tt">GRAZIE PER ESSERTI ISCRITTO <br> AL FESTIVAL DELL'AMORE 2020</h3>
               <h5 class="sub-avviso">Utilizza questo link per collegarti diretta e per partecipare come pubblico dalle <span class="empha">20:20</span></h5>
               <textarea id="myInput" rows="2" cols="25" readonly>
-                www.ilfestivaldellamore.it
+                https://us02web.zoom.us/j/2500420200
               </textarea> <br>
               <button class="bott" v-on:click="copyClip">Copia link</button> <br>
               <div class="copied" v-show="copied">link copiato:)</div>
@@ -297,7 +297,7 @@
               <!-- <textarea id="myInput" rows="2" cols="25" readonly>
                 www.ilfestivaldellamore.it
               </textarea> <br> -->
-              <a class="bott" href="https://https://www.ilfestivaldellamore.it/">VAI ALLA DIRETTA</a> <br>
+              <a class="bott" href="https://us02web.zoom.us/j/2500420200">VAI ALLA DIRETTA</a> <br>
               <!-- <div class="copied" v-show="copied">link copiato:)</div> -->
             </div>
           </div>
@@ -570,7 +570,7 @@ export default {
 
   beforeMount() {
     var now = new Date();
-    var sta = new Date("21 May 2020 20:20:00 GMT+0200");
+    var sta = new Date("21 May 2020 19:18:00 GMT+0200");
     this.date = sta;
     if (sta - now > 0) {
       //this.live = false;
