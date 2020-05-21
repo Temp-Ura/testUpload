@@ -16,12 +16,23 @@
           >PARTECIPA COME PUBBLICO</a>
         </div>
 
-        <div class="video">
+        <div class="video" v-if="!live">
           <youtube
             :video-id="videoId"
             :fitParent="true"
             :resize="true"
             :player-vars="playerVars"
+            ref="youtube"
+            @playing="playing"
+          ></youtube>
+        </div>
+
+        <div class="video livevid" v-else>
+          <youtube
+            :video-id="videoIdLive"
+            :fitParent="false"
+            :resize="true"
+            :player-vars="playerVarsLive"
             ref="youtube"
             @playing="playing"
           ></youtube>
@@ -260,11 +271,35 @@
           <div class="alert nope" v-if="checka">
             <h3 class="avviso">Compila tutti i campi obbligatori</h3>
           </div>
-          <div class="alert success" v-if="success">
+          <!-- <div class="alert success" v-if="success">
             <h3 class="avviso">
               Grazie per esserti iscritto al Festival dell'Amore 2020 
               <br />Giovedì 21 alle 20:00 riceverai una mail con il link per partecipare come pubblico e solo se lo chiederai potrai intervenire in diretta
             </h3>
+          </div> -->
+          <div class="alert success" v-if="success">
+            <h3 class="avviso" v-if="!live && !prelive">
+              Grazie per esserti iscritto al Festival dell'Amore 2020 
+              <br />Giovedì 21 alle 20:00 riceverai una mail con il link per partecipare come pubblico e solo se lo chiederai potrai intervenire in diretta.
+            </h3>
+             <div class="avviso new-avv" v-if="!live && prelive">
+              <h3 class="avviso new-tt">GRAZIE PER ESSERTI ISCRITTO <br> AL FESTIVAL DELL'AMORE 2020</h3>
+              <h5 class="sub-avviso">Utilizza questo link per collegarti diretta e per partecipare come pubblico dalle <span class="empha">20:20</span></h5>
+              <textarea id="myInput" rows="2" cols="25" readonly>
+                www.ilfestivaldellamore.it
+              </textarea> <br>
+              <button class="bott" v-on:click="copyClip">Copia link</button> <br>
+              <div class="copied" v-show="copied">link copiato:)</div>
+            </div>
+            <div class="avviso new-avv" v-if="live && !prelive">
+              <h3 class="avviso new-tt">GRAZIE PER ESSERTI ISCRITTO <br> AL FESTIVAL DELL'AMORE 2020</h3>
+              <h5 class="sub-avviso">Vai diretta e per partecipare come pubblico</h5><br>
+              <!-- <textarea id="myInput" rows="2" cols="25" readonly>
+                www.ilfestivaldellamore.it
+              </textarea> <br> -->
+              <a class="bott" href="https://https://www.ilfestivaldellamore.it/">VAI ALLA DIRETTA</a> <br>
+              <!-- <div class="copied" v-show="copied">link copiato:)</div> -->
+            </div>
           </div>
           <button v-if="!success" class="bott" type="submit">Partecipa</button>
         </form>
@@ -316,7 +351,14 @@ export default {
       hover: false,
 
       newPcf: true,
+      
       live: false,
+      prelive: false,
+      copied: false,
+
+
+
+
       ora: "",
       timer: "",
       show: false,
@@ -324,10 +366,19 @@ export default {
       prognew: [],
       date: "",
       videoId: "u7SRSKGIf5I",
+      videoIdLive: "Y8zme1Fg2Fc",
       playerVars: {
         autoplay: 1,
         modestbranding: 0,
         controls: 0,
+        showinfo: 0,
+        rel: 0,
+        wmode: "opaque"
+      },
+      playerVarsLive: {
+        autoplay: 0,
+        modestbranding: 0,
+        controls: 1,
         showinfo: 0,
         rel: 0,
         wmode: "opaque"
@@ -375,7 +426,14 @@ export default {
   },
 
   methods: {
-
+    copyClip() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      //alert("Copied the text: " + copyText.value);
+      this.copied = !this.copied
+    },
     handleScroll(event) {
       var k = window.scrollY ;
       var theta = k / 10 ;
@@ -458,25 +516,50 @@ export default {
     },
     cancelAutoUdate: function() {
       clearInterval(this.timer);
-    }
+    },
+
+    checkTime: function() {
+      this.ora = new Date();
+      var star = new Date(this.date);
+      
+        if(star - this.ora < 3600000) {
+          this.prelive = true;
+          console.log ("%c ASPETTA POCO", "color:orange");
+        if (star - this.ora < 0) {
+          this.live = true;
+          this.cancelAutoUdate();
+          console.log ("%c LIVE", "color:lime")
+          this.prelive = false;}
+        } else { 
+          console.log ("%c ASPETTA", "color:pink")
+          }
+        // this.live = true;
+        // this.cancelAutoUdate();
+        // //toggleLive();
+      
+        // this.live = false;
+      }
 
     // checkTime: function() {
     //   this.ora = new Date();
     //   var star = new Date(this.date);
-    //   if (star - this.ora < 0) {
+    //   if (star - this.ora > 0) {
+    //     if(sta - this.ora < 3600000) {
+    //       this.prelive = true;
+    //     } else if
     //     this.live = true;
     //     this.cancelAutoUdate();
     //     //toggleLive();
     //   } else {
     //     this.live = false;
     //   }
-    //   // console.log(this.ora - star + " | " + this.live);
-    //   // console.log(this.ora);
-    // }
+      // console.log(this.ora - star + " | " + this.live);
+      // console.log(this.ora);
+    //}
 
-    //   // toggleLive() {
-    //   //   this.$store.commit("toggleLive");
-    //   // }
+      // toggleLive() {
+      //   this.$store.commit("toggleLive");
+      // }
   },
 
   // // computed: {
@@ -486,18 +569,23 @@ export default {
   // // },
 
   beforeMount() {
-    // var now = new Date();
-    // var sta = new Date("4 April 2020 10:00:00 GMT+0200");
-    // this.date = sta;
-    // if (sta - now > 0) {
-    //   this.live = false;
-    //   if (sta - now < 3600000) {
-    //     this.timer = setInterval(this.checkTime, 10000);
-    //   }
-    //   //console.log((sta - now) + " | dai oh | "+((sta - now) < 3600000))
-    // } else {
-    //   this.live = true;
-    // }
+    var now = new Date();
+    var sta = new Date("21 May 2020 20:20:00 GMT+0200");
+    this.date = sta;
+    if (sta - now > 0) {
+      //this.live = false;
+      //console.log("%c PREEEEE-LIVEEEEEEE: " + (sta - now), "color:lime")
+      if (sta - now < 3600000) {
+        //if (sta - now < 60000) {
+        this.prelive = true;
+        //
+      } 
+      this.timer = setInterval(this.checkTime, 30000);
+    } else {
+      //console.log("%c LIVEEEEEEE", "color:red")
+      this.live = true;
+      this.prelive = false;
+    }
   },
   mounted() {
     this.show = true;
@@ -521,6 +609,45 @@ export default {
 @import "@/assets/scss/now-ui-kit/_variables.scss";
 * {
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.new-tt{
+  font-family: Open Sans Condensed !important;
+}
+
+.sub-avviso{
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.empha{
+  text-decoration: underline;
+}
+
+#myInput{
+  font-size: 1.5em;
+  background: rgb(143, 255, 171);
+  border: 3px solid white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  resize: none;
+  padding: 7px 0;
+}
+
+.avviso > .bott{
+  color: #f7fcfc;
+  border-color: white;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.copied{
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+
+#myInput:focus{
+  outline: none;
 }
 
 .starter-page {
@@ -674,6 +801,13 @@ export default {
   max-width: 1920px;
   //border: 20px solid #ec008c;
   //padding: 50px;
+}
+
+@media screen and (min-width: 1020px){
+  .livevid { 
+    width: 80vw !important;
+  max-width: 1920px;
+  }
 }
 
 .video-old {
@@ -1383,5 +1517,39 @@ body {
   
   padding: 0 5vw;
   }
+
+  .new-tt{
+  font-family: Open Sans Condensed !important;
+}
+
+.sub-avviso{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.empha{
+  text-decoration: underline;
+}
+
+#myInput{
+  font-size: 18px;
+  background: rgb(143, 255, 171);
+  border: 3px solid white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  resize: none;
+  padding: 7px 0;
+}
+
+.avviso > .bott{
+  color: #f7fcfc;
+  border-color: white;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.copied{
+  font-size: 20px;
+  font-weight: normal;
+}
 }
 </style>

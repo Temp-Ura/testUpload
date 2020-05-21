@@ -12,7 +12,7 @@
     :series="series"
 ></apexchart>
       </div>
-      <!-- <pre>{{series}}</pre> -->
+      <!-- <pre v-for="item in jason" :key="item.length">{{item.nome}}, {{item.cognome}}, {{item.email}}</pre> -->
   </div>
 </template>
 
@@ -85,9 +85,10 @@ mounted(){
       .get()
       .then(snap => {
         const testCollection = [];
+        const testjso = [];
         snap.forEach(doc => {
           testCollection.push([new Date(doc.id)]);
-
+          // testjso.push(doc.data());
         });
 
     testCollection.sort(function(a, b) {
@@ -97,6 +98,7 @@ mounted(){
         testCollection.forEach(element => element.splice(1,0,i++))
         //console.log(testCollection)
         this.form = testCollection
+        // this.jason = testjso
         //this.form2 = testCollection.filter(a => a[1] % 5 == 0); 
         this.series = [
             {
@@ -111,6 +113,7 @@ mounted(){
 
   data(){
       return {
+          jason: {},
           form: "",
           form2: "",
   chartOptions: {
