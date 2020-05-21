@@ -12,6 +12,7 @@
     :series="series"
 ></apexchart>
       </div>
+      <!-- <pre>{{series}}</pre> -->
   </div>
 </template>
 
