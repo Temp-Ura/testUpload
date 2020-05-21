@@ -590,6 +590,7 @@ export default {
       //console.log("%c LIVEEEEEEE", "color:red")
       this.live = true;
       this.prelive = false;
+      this.livevid = true;
     }
   },
   mounted() {
