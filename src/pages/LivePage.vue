@@ -813,7 +813,7 @@ export default {
 
 @media screen and (min-width: 1020px){
   .livevid { 
-    width: 80vw !important;
+    width: 70vw !important;
   max-width: 1920px;
   }
 }
