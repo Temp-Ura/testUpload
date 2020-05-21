@@ -570,7 +570,7 @@ export default {
 
   beforeMount() {
     var now = new Date();
-    var sta = new Date("21 May 2020 19:18:00 GMT+0200");
+    var sta = new Date("21 May 2020 20:20:00 GMT+0200");
     this.date = sta;
     if (sta - now > 0) {
       //this.live = false;
