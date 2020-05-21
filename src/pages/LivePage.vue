@@ -524,14 +524,14 @@ export default {
       
         if(star - this.ora < 3600000) {
           this.prelive = true;
-          console.log ("%c ASPETTA POCO", "color:orange");
+          //console.log ("%c ASPETTA POCO", "color:orange");
         if (star - this.ora < 0) {
           this.live = true;
           this.cancelAutoUdate();
-          console.log ("%c LIVE", "color:lime")
+          //console.log ("%c LIVE", "color:lime")
           this.prelive = false;}
         } else { 
-          console.log ("%c ASPETTA", "color:pink")
+          //console.log ("%c ASPETTA", "color:pink")
           }
         // this.live = true;
         // this.cancelAutoUdate();
