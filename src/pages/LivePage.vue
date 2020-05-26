@@ -7,14 +7,14 @@
 
       <div id="manifesto">
 
-        <div class="parte">
+        <!-- <div class="parte">
           <a
             class="link-part"
             href="#"
             v-scroll-to="{el:'#partecipa',  offset: -200,}"
             :scrollOptions="scrollOptions"
           >PARTECIPA COME PUBBLICO</a>
-        </div>
+        </div> -->
 
         <div class="video" v-if="!livevid">
           <youtube
@@ -48,30 +48,33 @@
         </div>
       <div class="programma" id="palinsesto">
         <h2 id="tito" class="progra">PROGRAMMA</h2>
+        <h2 id="tito" class="progra" style="color:#E80047; font-weight: normal">Clicca sull'intervento che ti interessa</h2>
         <!-- <h3 class="chsy">Clicca sull'intervento che ti interessa</h3>  <section class=legenda> 
     <div class="elblock"><div class="el el1"></div>Visioni /Scenari </div><div class="elblock"><div class="el el2"></div>Strategie Ecosistemiche</div><div class="elblock"> <div class="el el3"></div>Progetto Phoenix</div>
         </section>-->
       </div>
-      <!-- <div class="back-texture"> -->
+      
                 <section class="tab_prog" v-for="item in prog"  v-bind:key="item.length">
           <div class="pro-img">
-            <!-- <a v-on:click="viewYT(item.link)" v-scroll-to="{el:'#manifesto',  offset: -50}"> -->
-              <img class="profile_img" :src="'/img-rel/' + item.image" uk-parallax="opacity: 0,1;  x: -100,0;  viewport: 0.4;" />
-            <!-- </a> -->
+            <a v-if="item.link != 0" v-on:click="viewYT(item.link)" v-scroll-to="{el:'#manifesto',  offset: -50}">
+              <img class="profile_img imglink" :src="'/img-rel/' + item.image" uk-parallax="opacity: 0,1;  x: -100,0;  viewport: 0.4;" />
+            </a>
+            <img v-else class="profile_img" :src="'/img-rel/' + item.image" uk-parallax="opacity: 0,1;  x: -100,0;  viewport: 0.4;" />
           </div>
           <div class="text_prog" uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.4">
             
             <h3 v-if="item.dalla!=''" class="orario">{{item.dalla}} - {{item.alle}}</h3>
             <h3 v-else class="orario">CON LA PARTECIPAZIONE </h3>
             
-            <!-- <a
+            <a v-if="item.link != 0"
               href="#"
-              :class="{ 'tit1': item.sezione == 1, 'tit2': item.sezione == 2 ,'tit3': item.sezione == 3}"
+              
               v-on:click="viewYT(item.link)"
               v-scroll-to="{el:'#manifesto',  offset: -50}"
-              class="titolo"
-            >{{item.titolo}}</a> -->
-            <h5 class="titolo">{{item.titolo.toUpperCase()}}</h5>
+              class="titolo "
+            >
+            <h5 class="titolo link-tit">{{item.titolo.toUpperCase()}}</h5></a>
+             <h5 v-else class="titolo">{{item.titolo.toUpperCase()}}</h5>
                         <div v-if="item.ambito">
               <h5 class="mod-nomi">{{item.ambito}}</h5>
             </div>
@@ -179,7 +182,7 @@
 
      
 
-      <div class="block"></div>
+      <!-- <div class="block"></div>
       <div class="f-block" id="partecipa" >
         <div
           class="f-intro"
@@ -201,69 +204,13 @@
           <input placeholder="Email" type="email" name="name" v-model="email" />
           <br />
           
-          <!-- <label>Azienda</label>
-          <br />
-          <input placeholder="Azienda" type="text" name="name" v-model="azienda" />
-          <br />
-          <label>Categoria</label>
-          <br />
-          <select v-model="categoria">
-            <option disabled value>Please select one</option>
-            <option>Architettura & Design</option>
-            <option>Automotive & Transportation</option>
-            <option>Banking & Insurance</option>
-            <option>Commercio & fashion</option>
-            <option>Consulenza</option>
-            <option>Cultura & Formazione</option>
-
-            <option>Farmaceutica</option>
-            <option>Fondi – SGR</option>
-            <option>Food and Beverage</option>
-            <option>ICT – TLC</option>
-            <option>Industria</option>
-            <option>Ingegneria</option>
-            <option>Media e Comunicazione</option>
-            <option>PA</option>
-            <option>Real Estate & Construction</option>
-            <option>Energy & Utilities</option>
-            <option>Sanità</option>
-            <option>Service Provider</option>
-            <option>Università</option>
-            <option>Energy & Utilities</option>
-            <option>Altro</option>
-          </select>
-          <br />
-
-          <label>Come vuoi partecipare all'ecosistema?</label>
-          <br />
-          <select v-model="partecipazione">
-            <option disabled value>Please select one</option>
-            <option>Donor/Partner</option>
-            <option>Sponsor</option>
-            <option>Azienda Paretecipante</option>
-            <option>Spettatore</option>
-          </select>
-          <br />
-          <label>Note</label>
-          <br />
-          <textarea
-            class="texta"
-            id="Field4"
-            name="Field4"
-            spellcheck="true"
-            rows="3"
-            cols="70"
-            tabindex="4"
-            v-model="note"
-          ></textarea>
-          <br /> -->
+          
 
           <div class="checkdiv">
             <input class="checkbox" type="checkbox" name="privacy" value="true" v-model="privacy" />Accetto i Termini e Condizioni del Servizio e
             <a href="/privacy-policy.pdf">Privacy Policy</a>*
           <br>
-            <!-- <input class="checkbox" type="checkbox" name="privacy" value="true" v-model="privacy" />Autorizzo il trattamento dei miei dati personali sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).
-             -->
+           
              <input class="checkbox" type="checkbox" name="privacy" value="true" v-model="marketing" />Consenso al trattamento dei dati personali per finalità di marketing.
           </div>
           <br />
@@ -271,12 +218,7 @@
           <div class="alert nope" v-if="checka">
             <h3 class="avviso">Compila tutti i campi obbligatori</h3>
           </div>
-          <!-- <div class="alert success" v-if="success">
-            <h3 class="avviso">
-              Grazie per esserti iscritto al Festival dell'Amore 2020 
-              <br />Giovedì 21 alle 20:00 riceverai una mail con il link per partecipare come pubblico e solo se lo chiederai potrai intervenire in diretta
-            </h3>
-          </div> -->
+
           <div class="alert success" v-if="success">
             <h3 class="avviso" v-if="!live && !prelive">
               Grazie per esserti iscritto al Festival dell'Amore 2020 
@@ -294,16 +236,14 @@
             <div class="avviso new-avv" v-if="live && !prelive">
               <h3 class="avviso new-tt">GRAZIE PER ESSERTI ISCRITTO <br> AL FESTIVAL DELL'AMORE 2020</h3>
               <h5 class="sub-avviso">Vai diretta e per partecipare come pubblico</h5><br>
-              <!-- <textarea id="myInput" rows="2" cols="25" readonly>
-                www.ilfestivaldellamore.it
-              </textarea> <br> -->
+
               <a class="bott" href="https://us02web.zoom.us/j/2500420200">VAI ALLA DIRETTA</a> <br>
-              <!-- <div class="copied" v-show="copied">link copiato:)</div> -->
+              
             </div>
           </div>
           <button v-if="!success" class="bott" type="submit">Partecipa</button>
         </form>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -368,6 +308,7 @@ export default {
       videoId: "u7SRSKGIf5I",
       videoIdLive: "Y8zme1Fg2Fc",
       playerVars: {
+        start: 446,
         autoplay: 1,
         modestbranding: 0,
         controls: 0,
@@ -376,6 +317,7 @@ export default {
         wmode: "opaque"
       },
       playerVarsLive: {
+        start: 446,
         autoplay: 0,
         modestbranding: 0,
         controls: 1,
@@ -451,7 +393,7 @@ export default {
 
     viewYT(k) {
       this.$refs.youtube.player.seekTo(k, true);
-      //this.$refs.youtube.player.playVideo()
+      this.$refs.youtube.player.playVideo()
     },
     playVideo() {
       this.$refs.youtube.player.seekTo(79);
@@ -615,6 +557,16 @@ export default {
 @import "@/assets/scss/now-ui-kit/_variables.scss";
 * {
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.link-tit:hover{
+  color:white;
+  background: $primary-color;
+  // font-weight: normal;
+  cursor: pointer !important;
+}
+.link-tit{
+  text-decoration: underline;
+  cursor: pointer !important;
 }
 
 .new-tt{
@@ -815,6 +767,8 @@ export default {
   .livevid { 
     width: 70vw !important;
   max-width: 1920px;
+  padding-top: 20px ;
+   padding-bottom: 20px ;
   }
 }
 
@@ -891,10 +845,12 @@ body {
   }
 
   .imglink {
-    transition: transform 0.2s;
+    transition: filter 0.2s;
+    // opacity: 0.5;
   }
   .imglink:hover {
-    transform: scale(1.2);
+     filter: blur(5px);
+    
   }
 }
 

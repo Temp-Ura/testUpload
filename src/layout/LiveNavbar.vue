@@ -23,9 +23,9 @@
         style="text-decoration:underline"
           v-if="!liv"
           class="navbar-brand nav-link"
-          :to="{name: 'starter', hash: '#partecipa'}"
+          :to="{name: 'starter', hash:'#manifesto',  offset: -50}"
           :scrollOptions="scrollOptions"
-        >Partecipa</anchor-router-link>
+        >Live</anchor-router-link>
 
       </li>
       <li class="nav-item hover">
